@@ -2,6 +2,7 @@
   "name": "player",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://egorava.github.io/simple-hls-react-player/build",
   "devDependencies": {
     "enzyme": "^2.8.2",
     "eslint": "^4.0.0",

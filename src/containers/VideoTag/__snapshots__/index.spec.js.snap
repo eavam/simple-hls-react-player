@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoTag 1`] = `
+<video
+  controls={false}
+  style={
+    Object {
+      "backgroundColor": "black",
+      "height": "100%",
+      "minHeight": "100%",
+      "minWidth": "100%",
+      "width": "100%",
+    }
+  }
+/>
+`;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fullscreen 1`] = `
+<div
+  className="player-svg-icon icon-margin-left"
+  onClick={[Function]}
+>
+  <svg
+    className={undefined}
+    viewBox="0 0 25 25"
+  >
+    <path
+      d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
+      fill="#fff"
+    />
+    <path
+      d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
+      fill="#fff"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Fullscreen 2`] = `
+<div
+  className="player-svg-icon icon-margin-left"
+  onClick={[Function]}
+>
+  <svg
+    className={undefined}
+    viewBox="0 0 25 25"
+  >
+    <path
+      d="M0 25h25V0H0zM2 2h21v21H2zm1.58 1.58"
+      fill="#fff"
+    />
+    <path
+      d="M5.91 16.14H4.46v4.36h4.36V19H5.91zm0 0M5.91 6h2.91V4.5H4.46v4.37h1.45zm0 0M19 19h-2.91v1.5h4.36v-4.36H19zm0 0M16.09 4.5V6H19v2.87h1.46V4.5zm0 0"
+      fill="#fff"
+    />
+  </svg>
+</div>
+`;

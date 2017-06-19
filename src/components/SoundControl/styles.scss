@@ -1,0 +1,13 @@
+.sound-control {
+  display: flex;
+  align-items: center;
+}
+
+.volume-control {
+  position: relative;
+  cursor: pointer;
+  height: 5px;
+  width: 60px;
+  background-color: rgba(#fff, 0.5);
+
+}

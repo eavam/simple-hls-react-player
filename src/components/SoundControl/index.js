@@ -1,34 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SoundIcon from '../../svg-icons/SoundIcon'
-import OffIcon from '../../svg-icons/OffIcon'
+import styled from 'styled-components'
+import { Icon } from '../../globalStyled.js'
+import { SoundIcon, OffIcon } from '../svg-icons'
 
-import './styles.css'
-
-const SoundControl = ({ volume, muted, toggleMute, handleChangeVolume }) => {
-  
-  const shadow = {
-    boxShadow: `inset ${muted ? 0 : volume}px 0px 0 #fff`
-  }
-
-  return (
-    <div className='sound-control'>
-      <div className='player-svg-icon' onClick={toggleMute} >
-        { muted
+const SoundControl = ({ volume, muted, onClick, onMouseDown }) => 
+  <Root>
+    <Icon onClick={onClick} >
+      {
+        muted
           ? <OffIcon />
           : <SoundIcon />
-        }
-      </div>
-      <div className='volume-control' onMouseDown={handleChangeVolume} style={shadow} />
-    </div>
-  )
-}
+      }
+    </Icon>
+    <VolumeControl onMouseDown={onMouseDown} muted={muted} volume={volume} />
+  </Root>
+
 
 SoundControl.propTypes = {
   volume: PropTypes.string,
   muted: PropTypes.bool,
-  toggleMute: PropTypes.func,
-  handleChangeVolume: PropTypes.func,
+  onClick: PropTypes.func,
+  onMouseDown: PropTypes.func,
 }
+
+const Root = styled.div`
+  display: flex;
+  align-items: center;
+`
+const VolumeControl = styled.div`
+  position: relative;
+  cursor: pointer;
+  height: 5px;
+  width: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset ${props => props.muted ? 0 : props.volume}px 0px 0 #fff;
+`
 
 export default SoundControl

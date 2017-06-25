@@ -13,25 +13,31 @@ const initState = {
 }
 
 const player = (state = initState, action) => {
+
   switch (action.type) {
 
-  case actionTypes.SET_VIDEO_ELEMENT:
+  case actionTypes.SET_VIDEO_ELEMENT: {
     return {
       ...state,
       videoEl: action.element
     }
+  }
 
-  case actionTypes.CHANGE_VOLUME:
+  case actionTypes.CHANGE_VOLUME: {
+
+    const { volumeNumber, volumeNew } = action.volume
 
     state.videoEl.muted = false
+    state.videoEl.volume = volumeNumber
 
     return {
       ...state,
-      volume: action.volume,
+      volume: volumeNew,
       muted: false
     }
+  }
 
-  case actionTypes.TOGGLE_PAUSE:
+  case actionTypes.TOGGLE_PAUSE: {
 
     state.isPause
       ? state.videoEl.play()
@@ -41,8 +47,9 @@ const player = (state = initState, action) => {
       ...state,
       isPause: !state.isPause
     }
+  }
 
-  case actionTypes.TOGGLE_MUTE:
+  case actionTypes.TOGGLE_MUTE: {
 
     state.videoEl.muted = !state.muted
 
@@ -50,32 +57,37 @@ const player = (state = initState, action) => {
       ...state,
       muted: !state.muted
     }
+  }
 
-  case actionTypes.TIME_UPDATE:
+  case actionTypes.TIME_UPDATE: {
     return {
       ...state,
       currentTime: action.time
     }
+  }
 
-  case actionTypes.TOGGLE_FULLSCREEN:
+  case actionTypes.TOGGLE_FULLSCREEN: {
 
     state.isFullscreen
       ? fullscreen(state.videoEl.parentNode).release()
       : fullscreen(state.videoEl.parentNode).request()
-      // debugger
+
     return {
       ...state,
       isFullscreen: !state.isFullscreen
     }
+  }
 
-  case actionTypes.TOGGLE_SHOW_CONTROLS:
+  case actionTypes.TOGGLE_SHOW_CONTROLS: {
     return {
       ...state,
       showControls: !state.showControls
     }
+  }
 
-  default:
+  default: {
     return state
+  }
   }
 }
 

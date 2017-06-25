@@ -2,11 +2,11 @@
 
 exports[`SoundControl 1`] = `
 <div
-  className="sound-control"
+  className="sc-bwzfXH fNOhzS"
 >
   <div
-    className="player-svg-icon"
-    onClick={[Function]}
+    className="sc-bdVaJa cEikMS"
+    onClick={undefined}
   >
     <svg
       className={undefined}
@@ -19,24 +19,20 @@ exports[`SoundControl 1`] = `
     </svg>
   </div>
   <div
-    className="volume-control"
-    onMouseDown={[Function]}
-    style={
-      Object {
-        "boxShadow": "inset 34px 0px 0 #fff",
-      }
-    }
+    className="sc-htpNat kqvEeD"
+    muted={false}
+    onMouseDown={undefined}
   />
 </div>
 `;
 
 exports[`SoundControl 2`] = `
 <div
-  className="sound-control"
+  className="sc-bwzfXH fNOhzS"
 >
   <div
-    className="player-svg-icon"
-    onClick={[Function]}
+    className="sc-bdVaJa cEikMS"
+    onClick={undefined}
   >
     <svg
       className={undefined}
@@ -49,13 +45,9 @@ exports[`SoundControl 2`] = `
     </svg>
   </div>
   <div
-    className="volume-control"
-    onMouseDown={[Function]}
-    style={
-      Object {
-        "boxShadow": "inset 0px 0px 0 #fff",
-      }
-    }
+    className="sc-htpNat iOuWQK"
+    muted={true}
+    onMouseDown={undefined}
   />
 </div>
 `;

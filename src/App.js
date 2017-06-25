@@ -1,14 +1,10 @@
-import React, { Component } from 'react'
-import Player from './containers/Player'
+import { injectGlobal } from 'styled-components'
+import PlayerContainer from './containers/PlayerContainer'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Player />
-      </div>
-    )
+// eslint-disable-next-line
+injectGlobal`
+  body {
+    font-family: 'Ubuntu', sans-serif;
   }
-}
-
-export default App
+`
+export default PlayerContainer

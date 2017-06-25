@@ -1,33 +1,23 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { mount } from 'enzyme'
 import Fullscreen from './index.js'
 
 test('Fullscreen', () => {
 
   const props = {
     isFullscreen: false,
-    toggleFullscreen: () => {}
+    onClick: () => {}
   }
 
-  const enzymeWrapper = mount(<Fullscreen {...props} />)
-
-  expect(enzymeWrapper.find('div').hasClass('player-svg-icon')).toBe(true)
-  expect(enzymeWrapper.find('div').hasClass('icon-margin-left')).toBe(true)
-
-
-  const componentDisabled = renderer.create(
+  let component = renderer.create(
     <Fullscreen {...props} />
   )
-  let tree = componentDisabled.toJSON()
+  let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
-  props.isFullscreen = true
 
-  const componentEnabled = renderer.create(
-    <Fullscreen {...props} />
-  )
-  tree = componentEnabled.toJSON()
+  tree.props.isFullscreen = true
+  tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
 })

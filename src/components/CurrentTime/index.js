@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import './styles.css'
+const CurrentTime = ({ time }) => 
+  <Root>{time}</Root>
 
-const CurrentTime = ({ time }) => {
-  return (
-    <div className='current-time'>{time}</div>
-  )
-}
 
 CurrentTime.propTypes = {
   time: PropTypes.string,
 }
+
+const Root = styled.div`
+  font-size: 19px;
+  color: #fff;
+`
 
 export default CurrentTime

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoTag 1`] = `
+<video
+  className="sc-bdVaJa fUgVbA"
+  controls={false}
+/>
+`;

@@ -1,22 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import FullIcon from '../../svg-icons/FullIcon'
-import WindowIcon from '../../svg-icons/WindowIcon'
+import { Icon } from '../../globalStyled.js'
+import { FullIcon, WindowIcon } from '../svg-icons'
 
-const Fullsreen = ({ isFullscreen, toggleFullscreen }) => {
-  return (
-    <div className='player-svg-icon icon-margin-left' onClick={toggleFullscreen} >
-      { isFullscreen
+const Fullsreen = ({ isFullscreen, onClick }) => 
+  <Root onClick={onClick} >
+    { 
+      isFullscreen
         ? <WindowIcon />
         : <FullIcon />
-      }
-    </div>
-  )
-}
+    }
+  </Root>
+
 
 Fullsreen.propTypes = {
   isFullscreen: PropTypes.bool,
-  toggleFullscreen: PropTypes.func,
+  onClick: PropTypes.func,
 }
+
+const Root = Icon.extend`
+  margin-left: 20px;
+`
 
 export default Fullsreen

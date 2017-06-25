@@ -1,6 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { mount } from 'enzyme'
 import SoundControl from './index.js'
 
 test('SoundControl', () => {
@@ -12,7 +11,6 @@ test('SoundControl', () => {
     handleChangeVolume: () => {},
   }
 
-  const enzymeWrapper = mount(<SoundControl {...props} />)
 
   const componentDisabled = renderer.create(
     <SoundControl {...props} />

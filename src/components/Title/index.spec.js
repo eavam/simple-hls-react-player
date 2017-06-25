@@ -9,14 +9,10 @@ test('Title', () => {
     title: 'Test'
   }
 
-  const enzymeWrapper = mount(<Title {...props} />)
-
-  expect(enzymeWrapper.find('.title').text()).toBe('Test')
-
-  const componentDisabled = renderer.create(
+  const component = renderer.create(
     <Title {...props} />
   )
-  let tree = componentDisabled.toJSON()
+  let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
 })

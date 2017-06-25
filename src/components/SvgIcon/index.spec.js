@@ -10,10 +10,10 @@ test('SvgIcon', () => {
     children: <div />
   }
 
-  const componentDisabled = renderer.create(
+  const component = renderer.create(
     <SvgIcon {...props} />
   )
-  let tree = componentDisabled.toJSON()
+  let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
 })

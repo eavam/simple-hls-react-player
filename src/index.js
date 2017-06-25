@@ -5,7 +5,6 @@ import App from './App'
 import configureStore from './store/configureStore.js'
 import registerServiceWorker from './registerServiceWorker'
 
-import './main.css'
 
 const store = configureStore()
 

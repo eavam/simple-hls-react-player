@@ -1,22 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PlayIcon from '../../svg-icons/PlayIcon'
-import PauseIcon from '../../svg-icons/PauseIcon'
+import { Icon } from '../../globalStyled.js'
+import { PlayIcon, PauseIcon } from '../svg-icons'
 
-const PlayPauseControl = ({ isPause, onClick }) => {
-  return (
-    <div className='player-svg-icon icon-margin-right' onClick={onClick} >
-      { isPause
+const PlayPauseControl = ({ isPause, onClick }) => 
+  <Root onClick={onClick}>
+    { 
+      isPause
         ? <PlayIcon />
         : <PauseIcon />
-      }
-    </div>
-  )
-}
+    }
+  </Root>
+
 
 PlayPauseControl.propTypes = {
   isPause: PropTypes.bool,
   onClick: PropTypes.func,
 }
+
+const Root = Icon.extend`
+  margin-right: 20px;
+`
 
 export default PlayPauseControl

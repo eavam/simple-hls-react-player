@@ -4,12 +4,10 @@
   "private": true,
   "homepage": "https://egorava.github.io/simple-hls-react-player/build",
   "devDependencies": {
-    "enzyme": "^2.8.2",
-    "eslint": "^4.0.0",
+    "enzyme": "^2.9.1",
+    "eslint": "^4.1.0",
     "eslint-plugin-react": "^7.1.0",
     "jest": "^20.0.4",
-    "node-sass-chokidar": "^0.0.3",
-    "npm-run-all": "^4.0.2",
     "prop-types": "^15.5.10",
     "react-scripts": "1.0.7",
     "react-test-renderer": "^15.6.1",
@@ -17,19 +15,19 @@
   },
   "dependencies": {
     "fullscreen": "^1.1.0",
-    "hls.js": "^0.7.9",
+    "hls.js": "^0.7.10",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.5",
+    "recompose": "^0.23.5",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1",
+    "styled-components": "^2.1.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

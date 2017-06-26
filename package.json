@@ -5,7 +5,8 @@
   "homepage": "https://egorava.github.io/simple-hls-react-player/build",
   "devDependencies": {
     "enzyme": "^2.9.1",
-    "eslint": "^4.1.0",
+    "eslint": "^4.1.1",
+    "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-react": "^7.1.0",
     "jest": "^20.0.4",
     "prop-types": "^15.5.10",
@@ -29,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "react-scripts test --env=jsdom --coverage"
   },
   "main": "index.js",
   "license": "MIT"

@@ -12,18 +12,18 @@ test('SoundControl', () => {
   }
 
 
-  const componentDisabled = renderer.create(
+  let component = renderer.create(
     <SoundControl {...props} />
   )
-  let tree = componentDisabled.toJSON()
+  let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
   props.muted = true
 
-  const componentEnabled = renderer.create(
+  component = renderer.create(
     <SoundControl {...props} />
   )
-  tree = componentEnabled.toJSON()
+  tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
 })

@@ -18,5 +18,5 @@ const mapDispatchToProps = dispatch => ({
     dispatch(videoInit())
   }
 })
-
+export {Player}
 export default connect(mapStateToProps, mapDispatchToProps)(Player)

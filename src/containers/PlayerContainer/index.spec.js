@@ -6,9 +6,8 @@ import configureStore from 'redux-mock-store'
 
 
 
-test('Player', () => {
+test('PlayerContainer', () => {
   const props = {
-    actions: {},
     showControls: true,
     isFullscreen: false,
     videoEl: document.createElement('video')

@@ -72,5 +72,27 @@ describe('actions', () => {
     expect(actions.setVideoEl(video)).toEqual(expectedAction)
   })
 
+/*  it('volumeMouseMove action', () => {
+
+    const init = {
+      type: actionTypes.CHANGE_VOLUME,
+      volume: {
+        volumeNumber: 0.34,
+        volumeNew: 34
+      }
+    }
+
+    const event = {
+      target: {
+        getBoundingClientRect: () => ({ left: 300, width: 100 })
+      }
+    }
+
+    const windowEvent = {
+      clientX: 334
+    }
+
+    const dispath = (o) => expect(o).toBe(init)
+  })*/
 
 })

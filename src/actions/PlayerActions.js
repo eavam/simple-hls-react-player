@@ -21,20 +21,18 @@ export const setVideoEl = makeActionCreator(actionTypes.SET_VIDEO_ELEMENT, 'elem
 export const changeVolume = makeActionCreator(actionTypes.CHANGE_VOLUME, 'volume')
 
 /**
- * Вызывает action на изменения ползунка громкости
- * 
- * @param {event} event - вызываемое событие
+ * Adds event listeners to volume changes
  */
 export const handleChangeVolume = (event) => (dispatch) => {
   const bindVolumeMouseMove = volumeMouseMove(event, dispatch)
 
-  // Вызваем сразу чтобы реагировать на одиночный клик
+  // If this single click is reacted immediately
   bindVolumeMouseMove(event)
 
-  // Изменяет громкость при перемищении ползунка
+  // Change the volume when moving the mouse
   window.addEventListener('mousemove', bindVolumeMouseMove)
 
-  // При отпускании кнопки убираем listener
+  // If the button is released, deletes the listeners
   window.addEventListener('mouseup', () => {
     window.removeEventListener('mousemove', bindVolumeMouseMove)
   })
@@ -45,7 +43,7 @@ export const handleChangeVolume = (event) => (dispatch) => {
  * 
  * @param {event} event - вызываемое событие
  */
-const volumeMouseMove = (event, dispatch) => {
+export const volumeMouseMove = (event, dispatch) => {
 
   const { left: zeroPoint , width: maxPoint } = event.target.getBoundingClientRect()
 

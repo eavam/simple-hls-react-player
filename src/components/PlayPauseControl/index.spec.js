@@ -10,13 +10,16 @@ test('PlayPauseControl', () => {
   }
 
 
-  const component = renderer.create(
+  let component = renderer.create(
     <PlayPauseControl {...props} />
   )
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 
-  tree.props.isFullscreen = true
+  props.isPause = true
+  component = renderer.create(
+    <PlayPauseControl {...props} />
+  )
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 

@@ -16,7 +16,12 @@ test('Fullscreen', () => {
   expect(tree).toMatchSnapshot()
 
 
-  tree.props.isFullscreen = true
+  props.isFullscreen = true
+
+  component = renderer.create(
+    <Fullscreen {...props} />
+  )
+
   tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 

@@ -1,110 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Player 1`] = `
+exports[`PlayerContainer 1`] = `
 <div
-  onMouseMove={[Function]}
-  style={
-    Object {
-      "height": 720,
-      "margin": "0 auto",
-      "position": "relative",
-      "width": 1280,
-    }
-  }
+  className="sc-fjdhpX gObbce"
+  onMouseMove={undefined}
 >
   <video
+    className="sc-jTzLTM kgfMih"
     controls={false}
-    style={
-      Object {
-        "backgroundColor": "black",
-        "height": "100%",
-        "minHeight": "100%",
-        "minWidth": "100%",
-        "width": "100%",
-      }
-    }
   />
   <div
-    className="controls-wrapper"
+    className="sc-VigVT hGnlwQ"
   >
     <div
-      className="top-controls-wrapper"
+      className="sc-bwzfXH fNxfEv"
     >
       <div
-        className="title"
+        className="sc-bdVaJa gOaogD"
       />
     </div>
     <div
-      className="bottom-controls-wrapper"
+      className="sc-gqjmRU jvDgyA"
     >
       <div
-        className="left-column"
+        className="sc-bxivhb cpFXiD"
       >
         <div
-          className="player-svg-icon icon-margin-right"
-          onClick={[Function]}
-        >
-          <svg
-            className={undefined}
-            viewBox="0 0 20.03 25"
-          >
-            <path
-              d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
-              fill="#fff"
-            />
-          </svg>
-        </div>
-        <div
-          className="sound-control"
+          className="sc-ifAKCX hVlvMy"
         >
           <div
-            className="player-svg-icon"
+            className="sc-gzVnrw flazVf"
             onClick={[Function]}
           >
             <svg
               className={undefined}
-              viewBox="0 0 17.45 24.61"
+              viewBox="0 0 20.03 25"
             >
               <path
-                d="M16.52.17a1.64 1.64 0 0 0-1.73.18L9.52 4.48a3.2 3.2 0 0 0-.9-.13H3.21A3.21 3.21 0 0 0 0 7.56v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23A1.64 1.64 0 0 0 17.45 23V1.64a1.64 1.64 0 0 0-.93-1.47zm0 0"
+                d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
                 fill="#fff"
               />
             </svg>
           </div>
           <div
-            className="volume-control"
-            onMouseDown={[Function]}
-            style={
-              Object {
-                "boxShadow": "inset undefinedpx 0px 0 #fff",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="right-column"
-      >
-        <div
-          className="current-time"
-        />
-        <div
-          className="player-svg-icon icon-margin-left"
-          onClick={[Function]}
-        >
-          <svg
-            className={undefined}
-            viewBox="0 0 25 25"
+            className="sc-htoDjs jWUwCq"
           >
-            <path
-              d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
-              fill="#fff"
+            <div
+              className="sc-bZQynM jHMtzl"
+              onClick={[Function]}
+            >
+              <svg
+                className={undefined}
+                viewBox="0 0 17.45 24.61"
+              >
+                <path
+                  d="M16.52.17a1.64 1.64 0 0 0-1.73.18L9.52 4.48a3.2 3.2 0 0 0-.9-.13H3.21A3.21 3.21 0 0 0 0 7.56v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23A1.64 1.64 0 0 0 17.45 23V1.64a1.64 1.64 0 0 0-.93-1.47zm0 0"
+                  fill="#fff"
+                />
+              </svg>
+            </div>
+            <div
+              className="sc-dnqmqq kotGyD"
+              muted={undefined}
+              onMouseDown={[Function]}
             />
-            <path
-              d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
-              fill="#fff"
-            />
-          </svg>
+          </div>
+        </div>
+        <div
+          className="sc-EHOje dENADU"
+        >
+          <div
+            className="sc-iwsKbI kRhiHN"
+          />
+          <div
+            className="sc-gZMcBi kYFrRX"
+            onClick={[Function]}
+          >
+            <svg
+              className={undefined}
+              viewBox="0 0 25 25"
+            >
+              <path
+                d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
+                fill="#fff"
+              />
+              <path
+                d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
+                fill="#fff"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-import * as actionTypes from '../actionTypes.js'
-import Hls from 'hls.js'
+import * as actionTypes from "../actionTypes.js"
+import Hls from "hls.js"
 
 const makeActionCreator = (type, ...argNames) => {
-  return function (...args) {
+  return function(...args) {
     let action = { type }
     argNames.forEach((arg, index) => {
       action[argNames[index]] = args[index]
@@ -14,48 +14,55 @@ const makeActionCreator = (type, ...argNames) => {
 export const toggleMute = makeActionCreator(actionTypes.TOGGLE_MUTE)
 export const togglePause = makeActionCreator(actionTypes.TOGGLE_PAUSE)
 export const toggleFullscreen = makeActionCreator(actionTypes.TOGGLE_FULLSCREEN)
-export const toggleShowControls = makeActionCreator(actionTypes.TOGGLE_SHOW_CONTROLS)
+export const toggleShowControls = makeActionCreator(
+  actionTypes.TOGGLE_SHOW_CONTROLS
+)
 
-export const timeUpdate = makeActionCreator(actionTypes.TIME_UPDATE, 'time')
-export const setVideoEl = makeActionCreator(actionTypes.SET_VIDEO_ELEMENT, 'element')
-export const changeVolume = makeActionCreator(actionTypes.CHANGE_VOLUME, 'volume')
+export const timeUpdate = makeActionCreator(actionTypes.TIME_UPDATE, "time")
+export const setVideoEl = makeActionCreator(
+  actionTypes.SET_VIDEO_ELEMENT,
+  "element"
+)
+export const changeVolume = makeActionCreator(
+  actionTypes.CHANGE_VOLUME,
+  "volume"
+)
 
 /**
  * Adds event listeners to volume changes
  */
-export const handleChangeVolume = (event) => (dispatch) => {
+export const handleChangeVolume = event => dispatch => {
   const bindVolumeMouseMove = volumeMouseMove(event, dispatch)
 
   // If this single click is reacted immediately
   bindVolumeMouseMove(event)
 
   // Change the volume when moving the mouse
-  window.addEventListener('mousemove', bindVolumeMouseMove)
+  window.addEventListener("mousemove", bindVolumeMouseMove)
 
   // If the button is released, deletes the listeners
-  window.addEventListener('mouseup', () => {
-    window.removeEventListener('mousemove', bindVolumeMouseMove)
+  window.addEventListener("mouseup", () => {
+    window.removeEventListener("mousemove", bindVolumeMouseMove)
   })
 }
 
 /**
  * Вычисляет на какое значение нужно изменить громкость
- * 
- * @param {event} event - вызываемое событие
  */
 export const volumeMouseMove = (event, dispatch) => {
+  const {
+    left: zeroPoint,
+    width: maxPoint
+  } = event.target.getBoundingClientRect()
 
-  const { left: zeroPoint , width: maxPoint } = event.target.getBoundingClientRect()
-
-  return (windowEvent) => {
-
+  return windowEvent => {
     // Получаем разницу между текущей позицией клика
     // и минимальным возможной позицией
     let volumeNew = windowEvent.clientX - zeroPoint
 
     // Проверяем чтобы значение небыло выше или ниже допустимых
-    if( volumeNew >= maxPoint ) volumeNew = maxPoint
-    if( volumeNew <= 0 ) volumeNew = 0
+    if (volumeNew >= maxPoint) volumeNew = maxPoint
+    if (volumeNew <= 0) volumeNew = 0
 
     // Получаем процентное значение
     const volumeProcent = volumeNew / (maxPoint / 100)
@@ -63,14 +70,12 @@ export const volumeMouseMove = (event, dispatch) => {
     // Получаем десятичное значение
     const volumeNumber = volumeProcent / 100
 
-    // videoEl.volume = volumeElementVal
     dispatch(
       changeVolume({
         volumeNumber,
         volumeNew
       })
     )
-
   }
 }
 
@@ -85,36 +90,41 @@ export const showHideControls = () => (dispatch, getState) => {
   const action = () => dispatch(toggleShowControls())
 
   clearTimeout(timer)
-  if(!showControls) action()
+  if (!showControls) action()
   timer = setTimeout(action, 5000)
 }
 
 let hls = null
 
 export const videoInit = () => (dispatch, getState) => {
-
   const { videoEl } = getState()
 
-  if(videoEl && !hls) {
+  if (videoEl && !hls) {
     hls = new Hls()
-    hls.loadSource('https://cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8')
+    hls.loadSource(
+      "https://cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8"
+    )
     hls.attachMedia(videoEl)
-    hls.on(Hls.Events.MANIFEST_PARSED, (event) => dispatch(videoInitialState(event, videoEl)))
+    hls.on(Hls.Events.MANIFEST_PARSED, event =>
+      dispatch(videoInitialState(event, videoEl))
+    )
   }
 }
 
-const videoInitialState = (event, videoEl) => (dispatch) => {
+const videoInitialState = (event, videoEl) => dispatch => {
   videoEl.play()
   videoEl.volume = 0
-  videoEl.addEventListener('timeupdate', (event) => dispatch(actionTimeUpdate(event)))
+  videoEl.addEventListener("timeupdate", event =>
+    dispatch(actionTimeUpdate(event))
+  )
   dispatch(toggleShowControls())
 }
 
-const actionTimeUpdate = (event) => (dispatch) => {
+const actionTimeUpdate = event => dispatch => {
   const { currentTime } = event.target
 
-  let minute = Math.floor( currentTime / 60 )
-  let seconds = Math.floor( currentTime % 60 )
+  let minute = Math.floor(currentTime / 60)
+  let seconds = Math.floor(currentTime % 60)
 
   minute = minute < 10 ? `0${minute}` : minute
   seconds = seconds < 10 ? `0${seconds}` : seconds

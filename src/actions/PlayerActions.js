@@ -1,5 +1,5 @@
-import * as actionTypes from "../actionTypes.js"
-import Hls from "hls.js"
+import * as actionTypes from '../actionTypes.js'
+import Hls from 'hls.js'
 
 const makeActionCreator = (type, ...argNames) => {
   return function(...args) {
@@ -18,14 +18,14 @@ export const toggleShowControls = makeActionCreator(
   actionTypes.TOGGLE_SHOW_CONTROLS
 )
 
-export const timeUpdate = makeActionCreator(actionTypes.TIME_UPDATE, "time")
+export const timeUpdate = makeActionCreator(actionTypes.TIME_UPDATE, 'time')
 export const setVideoEl = makeActionCreator(
   actionTypes.SET_VIDEO_ELEMENT,
-  "element"
+  'element'
 )
 export const changeVolume = makeActionCreator(
   actionTypes.CHANGE_VOLUME,
-  "volume"
+  'volume'
 )
 
 /**
@@ -38,11 +38,11 @@ export const handleChangeVolume = event => dispatch => {
   bindVolumeMouseMove(event)
 
   // Change the volume when moving the mouse
-  window.addEventListener("mousemove", bindVolumeMouseMove)
+  window.addEventListener('mousemove', bindVolumeMouseMove)
 
   // If the button is released, deletes the listeners
-  window.addEventListener("mouseup", () => {
-    window.removeEventListener("mousemove", bindVolumeMouseMove)
+  window.addEventListener('mouseup', () => {
+    window.removeEventListener('mousemove', bindVolumeMouseMove)
   })
 }
 
@@ -102,7 +102,7 @@ export const videoInit = () => (dispatch, getState) => {
   if (videoEl && !hls) {
     hls = new Hls()
     hls.loadSource(
-      "https://cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8"
+      'https://cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8'
     )
     hls.attachMedia(videoEl)
     hls.on(Hls.Events.MANIFEST_PARSED, event =>
@@ -114,7 +114,7 @@ export const videoInit = () => (dispatch, getState) => {
 const videoInitialState = (event, videoEl) => dispatch => {
   videoEl.play()
   videoEl.volume = 0
-  videoEl.addEventListener("timeupdate", event =>
+  videoEl.addEventListener('timeupdate', event =>
     dispatch(actionTimeUpdate(event))
   )
   dispatch(toggleShowControls())

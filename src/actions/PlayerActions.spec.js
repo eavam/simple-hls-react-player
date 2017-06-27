@@ -1,8 +1,8 @@
-import * as actions from "./PlayerActions.js"
-import * as actionTypes from "../actionTypes.js"
+import * as actions from './PlayerActions.js'
+import * as actionTypes from '../actionTypes.js'
 
-describe("actions", () => {
-  it("toggleMute action", () => {
+describe('actions', () => {
+  it('toggleMute action', () => {
     const expectedAction = {
       type: actionTypes.TOGGLE_MUTE
     }
@@ -10,7 +10,7 @@ describe("actions", () => {
     expect(actions.toggleMute()).toEqual(expectedAction)
   })
 
-  it("togglePause action", () => {
+  it('togglePause action', () => {
     const expectedAction = {
       type: actionTypes.TOGGLE_PAUSE
     }
@@ -18,7 +18,7 @@ describe("actions", () => {
     expect(actions.togglePause()).toEqual(expectedAction)
   })
 
-  it("toggleFullscreen action", () => {
+  it('toggleFullscreen action', () => {
     const expectedAction = {
       type: actionTypes.TOGGLE_FULLSCREEN
     }
@@ -26,7 +26,7 @@ describe("actions", () => {
     expect(actions.toggleFullscreen()).toEqual(expectedAction)
   })
 
-  it("toggleShowControls action", () => {
+  it('toggleShowControls action', () => {
     const expectedAction = {
       type: actionTypes.TOGGLE_SHOW_CONTROLS
     }
@@ -34,16 +34,16 @@ describe("actions", () => {
     expect(actions.toggleShowControls()).toEqual(expectedAction)
   })
 
-  it("timeUpdate action", () => {
+  it('timeUpdate action', () => {
     const expectedAction = {
       type: actionTypes.TIME_UPDATE,
-      time: "04:34"
+      time: '04:34'
     }
 
-    expect(actions.timeUpdate("04:34")).toEqual(expectedAction)
+    expect(actions.timeUpdate('04:34')).toEqual(expectedAction)
   })
 
-  it("changeVolume action", () => {
+  it('changeVolume action', () => {
     const expectedAction = {
       type: actionTypes.CHANGE_VOLUME,
       volume: 45
@@ -52,8 +52,8 @@ describe("actions", () => {
     expect(actions.changeVolume(45)).toEqual(expectedAction)
   })
 
-  it("setVideoEl action", () => {
-    const video = document.createElement("video")
+  it('setVideoEl action', () => {
+    const video = document.createElement('video')
 
     const expectedAction = {
       type: actionTypes.SET_VIDEO_ELEMENT,
@@ -63,7 +63,7 @@ describe("actions", () => {
     expect(actions.setVideoEl(video)).toEqual(expectedAction)
   })
 
-  it("volumeMouseMove action", () => {
+  it('volumeMouseMove action', () => {
     const init = {
       type: actionTypes.CHANGE_VOLUME,
       volume: {

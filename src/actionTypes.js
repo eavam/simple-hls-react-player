@@ -1,7 +1,10 @@
-export const SET_VIDEO_ELEMENT = 'SET_VIDEO_ELEMENT'
-export const CHANGE_VOLUME = 'CHANGE_VOLUME'
-export const TOGGLE_PAUSE = 'TOGGLE_PAUSE'
-export const TOGGLE_MUTE = 'TOGGLE_MUTE'
-export const TIME_UPDATE = 'TIME_UPDATE'
-export const TOGGLE_FULLSCREEN = 'TOGGLE_FULLSCREEN'
-export const TOGGLE_SHOW_CONTROLS = 'TOGGLE_SHOW_CONTROLS'
+import { createAction } from 'redux-act'
+
+export const toggleMute = createAction('toggleMute')
+export const togglePause = createAction('togglePause')
+export const toggleFullscreen = createAction('toggleFullscreen')
+export const toggleShowControls = createAction('toggleShowControls')
+
+export const timeUpdate = createAction('timeUpdate', time => ({ time }))
+export const setVideoEl = createAction('setVideoEl', element => ({ element }))
+export const changeVolume = createAction('changeVolume', volume => ({ volume }))

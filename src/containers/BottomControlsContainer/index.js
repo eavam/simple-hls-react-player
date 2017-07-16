@@ -1,19 +1,9 @@
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import BottomControls from '../../components/BottomControls'
-import {
-  getPause,
-  getVolume,
-  getMuted,
-  getTime,
-  getFullscreen
-} from '../../selectors'
-import {
-  togglePause,
-  toggleMute,
-  handleChangeVolume,
-  toggleFullscreen
-} from '../../actions/PlayerActions.js'
+import { getPause, getVolume, getMuted, getTime, getFullscreen } from '../../selectors'
+import { handleChangeVolume } from '../../actions/PlayerActions'
+import { togglePause, toggleMute, toggleFullscreen } from '../../actionTypes'
 
 const mapStateToProps = createStructuredSelector({
   isFullscreen: getFullscreen,

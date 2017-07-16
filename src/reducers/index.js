@@ -1,4 +1,5 @@
 import fullscreen from 'fullscreen'
+import { createReducer } from 'redux-act'
 import * as actionTypes from '../actionTypes.js'
 
 const initState = {
@@ -12,18 +13,15 @@ const initState = {
   showControls: false
 }
 
-const player = (state = initState, action) => {
-  switch (action.type) {
-    case actionTypes.SET_VIDEO_ELEMENT: {
-      return {
-        ...state,
-        videoEl: action.element
-      }
-    }
+const playerReducer = createReducer(
+  {
+    [actionTypes.setVideoEl]: (state, action) => ({
+      ...state,
+      videoEl: action.element
+    }),
 
-    case actionTypes.CHANGE_VOLUME: {
+    [actionTypes.changeVolume]: (state, action) => {
       const { volumeNumber, volumeNew } = action.volume
-
       state.videoEl.muted = false
       state.videoEl.volume = volumeNumber
 
@@ -32,34 +30,32 @@ const player = (state = initState, action) => {
         volume: volumeNew,
         muted: false
       }
-    }
+    },
 
-    case actionTypes.TOGGLE_PAUSE: {
+    [actionTypes.togglePause]: state => {
       state.isPause ? state.videoEl.play() : state.videoEl.pause()
 
       return {
         ...state,
         isPause: !state.isPause
       }
-    }
+    },
 
-    case actionTypes.TOGGLE_MUTE: {
+    [actionTypes.toggleMute]: state => {
       state.videoEl.muted = !state.muted
 
       return {
         ...state,
         muted: !state.muted
       }
-    }
+    },
 
-    case actionTypes.TIME_UPDATE: {
-      return {
-        ...state,
-        currentTime: action.time
-      }
-    }
+    [actionTypes.timeUpdate]: (state, action) => ({
+      ...state,
+      currentTime: action.time
+    }),
 
-    case actionTypes.TOGGLE_FULLSCREEN: {
+    [actionTypes.toggleFullscreen]: state => {
       state.isFullscreen
         ? fullscreen(state.videoEl.parentNode).release()
         : fullscreen(state.videoEl.parentNode).request()
@@ -68,19 +64,11 @@ const player = (state = initState, action) => {
         ...state,
         isFullscreen: !state.isFullscreen
       }
-    }
+    },
 
-    case actionTypes.TOGGLE_SHOW_CONTROLS: {
-      return {
-        ...state,
-        showControls: !state.showControls
-      }
-    }
+    [actionTypes.toggleShowControls]: state => ({ ...state, showControls: !state.showControls })
+  },
+  initState
+)
 
-    default: {
-      return state
-    }
-  }
-}
-
-export default player
+export default playerReducer

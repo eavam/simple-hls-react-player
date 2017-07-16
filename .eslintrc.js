@@ -26,6 +26,6 @@ module.exports = {
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": ["error", {"singleQuote": true, "semi": false, "trailingComma": "none", "parser": "flow"}]
+    "prettier/prettier": ["error", {"singleQuote": true, "semi": false, "printWidth": 100, "trailingComma": "none", "parser": "flow"}]
   }
 };

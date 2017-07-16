@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { shouldUpdate } from 'recompose'
 
-export const VideoTag = ({ setVideoEl }) =>
-  <Video controls={false} innerRef={setVideoEl} />
+export const VideoTag = ({ setVideoEl }) => <Video controls={false} innerRef={setVideoEl} />
 
 const Video = styled.video`
   width: 100%;

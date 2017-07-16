@@ -1,32 +1,5 @@
-import * as actionTypes from '../actionTypes.js'
 import Hls from 'hls.js'
-
-const makeActionCreator = (type, ...argNames) => {
-  return function(...args) {
-    let action = { type }
-    argNames.forEach((arg, index) => {
-      action[argNames[index]] = args[index]
-    })
-    return action
-  }
-}
-
-export const toggleMute = makeActionCreator(actionTypes.TOGGLE_MUTE)
-export const togglePause = makeActionCreator(actionTypes.TOGGLE_PAUSE)
-export const toggleFullscreen = makeActionCreator(actionTypes.TOGGLE_FULLSCREEN)
-export const toggleShowControls = makeActionCreator(
-  actionTypes.TOGGLE_SHOW_CONTROLS
-)
-
-export const timeUpdate = makeActionCreator(actionTypes.TIME_UPDATE, 'time')
-export const setVideoEl = makeActionCreator(
-  actionTypes.SET_VIDEO_ELEMENT,
-  'element'
-)
-export const changeVolume = makeActionCreator(
-  actionTypes.CHANGE_VOLUME,
-  'volume'
-)
+import * as actionTypes from '../actionTypes.js'
 
 /**
  * Adds event listeners to volume changes
@@ -47,31 +20,27 @@ export const handleChangeVolume = event => dispatch => {
 }
 
 /**
- * Вычисляет на какое значение нужно изменить громкость
+ * Calculates the value to change the volume
  */
 export const volumeMouseMove = (event, dispatch) => {
-  const {
-    left: zeroPoint,
-    width: maxPoint
-  } = event.target.getBoundingClientRect()
+  const { left: zeroPoint, width: maxPoint } = event.target.getBoundingClientRect()
 
   return windowEvent => {
-    // Получаем разницу между текущей позицией клика
-    // и минимальным возможной позицией
+    // Difference between the current position and the min
     let volumeNew = windowEvent.clientX - zeroPoint
 
-    // Проверяем чтобы значение небыло выше или ниже допустимых
+    // Check value position in range
     if (volumeNew >= maxPoint) volumeNew = maxPoint
     if (volumeNew <= 0) volumeNew = 0
 
-    // Получаем процентное значение
+    // Get percent value
     const volumeProcent = volumeNew / (maxPoint / 100)
 
-    // Получаем десятичное значение
+    // Get float value
     const volumeNumber = volumeProcent / 100
 
     dispatch(
-      changeVolume({
+      actionTypes.changeVolume({
         volumeNumber,
         volumeNew
       })
@@ -83,11 +52,11 @@ export const volumeMouseMove = (event, dispatch) => {
 let timer = null
 
 /**
- * Показывает или скрывет Controls
+ * Show/Hide Controls
 */
 export const showHideControls = () => (dispatch, getState) => {
   const { showControls } = getState()
-  const action = () => dispatch(toggleShowControls())
+  const action = () => dispatch(actionTypes.toggleShowControls())
 
   clearTimeout(timer)
   if (!showControls) action()
@@ -105,19 +74,15 @@ export const videoInit = () => (dispatch, getState) => {
       'https://cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8'
     )
     hls.attachMedia(videoEl)
-    hls.on(Hls.Events.MANIFEST_PARSED, event =>
-      dispatch(videoInitialState(event, videoEl))
-    )
+    hls.on(Hls.Events.MANIFEST_PARSED, event => dispatch(videoInitialState(event, videoEl)))
   }
 }
 
 const videoInitialState = (event, videoEl) => dispatch => {
   videoEl.play()
   videoEl.volume = 0
-  videoEl.addEventListener('timeupdate', event =>
-    dispatch(actionTimeUpdate(event))
-  )
-  dispatch(toggleShowControls())
+  videoEl.addEventListener('timeupdate', event => dispatch(actionTimeUpdate(event)))
+  dispatch(actionTypes.toggleShowControls())
 }
 
 const actionTimeUpdate = event => dispatch => {
@@ -129,5 +94,5 @@ const actionTimeUpdate = event => dispatch => {
   minute = minute < 10 ? `0${minute}` : minute
   seconds = seconds < 10 ? `0${seconds}` : seconds
 
-  dispatch(timeUpdate(`${minute}:${seconds}`))
+  dispatch(actionTypes.timeUpdate(`${minute}:${seconds}`))
 }

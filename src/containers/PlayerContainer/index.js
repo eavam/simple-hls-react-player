@@ -1,11 +1,8 @@
 import { createStructuredSelector } from 'reselect'
 import { connect } from 'react-redux'
 import { getFullscreen, getShowControls, getVideoEl } from '../../selectors'
-import {
-  showHideControls,
-  setVideoEl,
-  videoInit
-} from '../../actions/PlayerActions.js'
+import { showHideControls, videoInit } from '../../actions/PlayerActions'
+import { setVideoEl } from '../../actionTypes'
 import Player from '../../components/Player'
 
 const mapStateToProps = createStructuredSelector({

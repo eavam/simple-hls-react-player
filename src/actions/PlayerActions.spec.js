@@ -1,89 +1,102 @@
 import * as actions from './PlayerActions.js'
 import * as actionTypes from '../actionTypes.js'
 
-describe('actions', () => {
-  it('toggleMute action', () => {
-    const expectedAction = {
-      type: actionTypes.TOGGLE_MUTE
-    }
-
-    expect(actions.toggleMute()).toEqual(expectedAction)
-  })
-
-  it('togglePause action', () => {
-    const expectedAction = {
-      type: actionTypes.TOGGLE_PAUSE
-    }
-
-    expect(actions.togglePause()).toEqual(expectedAction)
-  })
-
-  it('toggleFullscreen action', () => {
-    const expectedAction = {
-      type: actionTypes.TOGGLE_FULLSCREEN
-    }
-
-    expect(actions.toggleFullscreen()).toEqual(expectedAction)
-  })
-
-  it('toggleShowControls action', () => {
-    const expectedAction = {
-      type: actionTypes.TOGGLE_SHOW_CONTROLS
-    }
-
-    expect(actions.toggleShowControls()).toEqual(expectedAction)
-  })
-
-  it('timeUpdate action', () => {
-    const expectedAction = {
-      type: actionTypes.TIME_UPDATE,
-      time: '04:34'
-    }
-
-    expect(actions.timeUpdate('04:34')).toEqual(expectedAction)
-  })
-
-  it('changeVolume action', () => {
-    const expectedAction = {
-      type: actionTypes.CHANGE_VOLUME,
-      volume: 45
-    }
-
-    expect(actions.changeVolume(45)).toEqual(expectedAction)
-  })
-
-  it('setVideoEl action', () => {
-    const video = document.createElement('video')
-
-    const expectedAction = {
-      type: actionTypes.SET_VIDEO_ELEMENT,
-      element: video
-    }
-
-    expect(actions.setVideoEl(video)).toEqual(expectedAction)
-  })
-
-  it('volumeMouseMove action', () => {
-    const init = {
-      type: actionTypes.CHANGE_VOLUME,
-      volume: {
-        volumeNumber: 0.34,
-        volumeNew: 34
+describe('PlayerAction', () => {
+  describe('volumeMouseMove', () => {
+    test('volumeMouseMove default', () => {
+      const init = {
+        payload: {
+          volume: {
+            volumeNew: 184,
+            volumeNumber: 0.575
+          }
+        },
+        type: '[8] changeVolume'
       }
-    }
 
-    const event = {
-      target: {
-        getBoundingClientRect: () => ({ left: 300, width: 100 })
+      const event = {
+        target: {
+          getBoundingClientRect: () => ({
+            left: 150,
+            width: 320
+          })
+        }
       }
-    }
 
-    const windowEvent = {
-      clientX: 334
-    }
+      const windowEvent = {
+        clientX: 334
+      }
 
-    const dispatсh = o => expect(o).toEqual(init)
+      const dispatсh = o => expect(o).toEqual(init)
 
-    actions.volumeMouseMove(event, dispatсh)(windowEvent)
+      actions.volumeMouseMove(event, dispatсh)(windowEvent)
+    })
+
+    test('volumeMouseMove new volume > maxPoint', () => {
+      const init = {
+        payload: {
+          volume: {
+            volumeNew: 320,
+            volumeNumber: 1
+          }
+        },
+        type: '[8] changeVolume'
+      }
+
+      const event = {
+        target: {
+          getBoundingClientRect: () => ({
+            left: 150,
+            width: 320
+          })
+        }
+      }
+
+      const windowEvent = {
+        clientX: 834
+      }
+
+      const dispatсh = o => expect(o).toEqual(init)
+
+      actions.volumeMouseMove(event, dispatсh)(windowEvent)
+    })
+
+    test('volumeMouseMove new volume < 0', () => {
+      const init = {
+        payload: {
+          volume: {
+            volumeNew: 0,
+            volumeNumber: 0
+          }
+        },
+        type: '[8] changeVolume'
+      }
+
+      const event = {
+        target: {
+          getBoundingClientRect: () => ({
+            left: 150,
+            width: 320
+          })
+        }
+      }
+
+      const windowEvent = {
+        clientX: 140
+      }
+
+      const dispatсh = o => expect(o).toEqual(init)
+
+      actions.volumeMouseMove(event, dispatсh)(windowEvent)
+    })
   })
+
+/*   describe('showHideControls', () => {
+    test('showHideControls default', () => {
+      const dispatch = () => {}
+      const getState = () => ({ showControls: false })
+
+      actions.showHideControls()(dispatch, getState)
+    })
+  }) */
 })

@@ -17,18 +17,13 @@ describe('reducers', () => {
     expect(reducer(undefined, {})).toEqual(initState)
   })
 
-  it('should handle TOGGLE_PAUSE', () => {
+  /* it('should handle TOGGLE_PAUSE', () => {
     const video = document.createElement('video')
 
-    expect(
-      reducer(
-        { ...initState, videoEl: video },
-        { type: actionTypes.TOGGLE_PAUSE }
-      )
-    ).toEqual({
+    expect(reducer({ ...initState, videoEl: video }, { type: actionTypes.TOGGLE_PAUSE })).toEqual({
       ...initState,
       videoEl: video,
       isPause: true
     })
-  })
+  }) */
 })

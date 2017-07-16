@@ -5,10 +5,7 @@ import thunk from 'redux-thunk'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const configureStore = initialState => {
-  const store = createStore(
-    rootReducer,
-    composeEnhancers(applyMiddleware(thunk))
-  )
+  const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
   if (module.hot) {
     module.hot.accept('../reducers', () => {

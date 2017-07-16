@@ -4,9 +4,7 @@ import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import Controls from './index.js'
 
-
 test('Controls', () => {
-
   const mockStore = configureStore()
 
   const component = renderer.create(
@@ -16,6 +14,4 @@ test('Controls', () => {
   )
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
-
 })
-

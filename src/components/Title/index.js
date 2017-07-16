@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Title = ({ title }) => 
+const Title = ({ title }) =>
   <Root>
     {title}
   </Root>
 
 Title.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string
 }
 
 const Root = styled.div`

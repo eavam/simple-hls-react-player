@@ -2,7 +2,6 @@ import reducer from './index.js'
 import * as actionTypes from '../actionTypes.js'
 
 describe('reducers', () => {
-
   const initState = {
     videoEl: null,
     title: 'Test title',
@@ -19,12 +18,11 @@ describe('reducers', () => {
   })
 
   it('should handle TOGGLE_PAUSE', () => {
-    
     const video = document.createElement('video')
 
     expect(
       reducer(
-        { ...initState, videoEl: video},
+        { ...initState, videoEl: video },
         { type: actionTypes.TOGGLE_PAUSE }
       )
     ).toEqual({
@@ -33,5 +31,4 @@ describe('reducers', () => {
       isPause: true
     })
   })
-
 })

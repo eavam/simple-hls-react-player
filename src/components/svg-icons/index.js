@@ -5,9 +5,9 @@ import PlayIcon from './PlayIcon'
 import SoundIcon from './SoundIcon'
 import WindowIcon from './WindowIcon'
 
-export {FullIcon}
-export {OffIcon}
-export {PauseIcon}
-export {PlayIcon}
-export {SoundIcon}
-export {WindowIcon}
+export { FullIcon }
+export { OffIcon }
+export { PauseIcon }
+export { PlayIcon }
+export { SoundIcon }
+export { WindowIcon }

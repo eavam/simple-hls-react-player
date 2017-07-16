@@ -2,7 +2,6 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import BottomControls from './index.js'
 
-
 test('BottomControls', () => {
   const props = {
     isFullscreen: false,
@@ -15,11 +14,7 @@ test('BottomControls', () => {
     toggleMute: () => {}
   }
 
-  const component = renderer.create(
-    <BottomControls {...props} />
-  )
+  const component = renderer.create(<BottomControls {...props} />)
   let tree = component.toJSON()
   expect(tree).toMatchSnapshot()
-
 })
-

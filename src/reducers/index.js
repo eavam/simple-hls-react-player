@@ -13,81 +13,73 @@ const initState = {
 }
 
 const player = (state = initState, action) => {
-
   switch (action.type) {
-
-  case actionTypes.SET_VIDEO_ELEMENT: {
-    return {
-      ...state,
-      videoEl: action.element
+    case actionTypes.SET_VIDEO_ELEMENT: {
+      return {
+        ...state,
+        videoEl: action.element
+      }
     }
-  }
 
-  case actionTypes.CHANGE_VOLUME: {
+    case actionTypes.CHANGE_VOLUME: {
+      const { volumeNumber, volumeNew } = action.volume
 
-    const { volumeNumber, volumeNew } = action.volume
+      state.videoEl.muted = false
+      state.videoEl.volume = volumeNumber
 
-    state.videoEl.muted = false
-    state.videoEl.volume = volumeNumber
-
-    return {
-      ...state,
-      volume: volumeNew,
-      muted: false
+      return {
+        ...state,
+        volume: volumeNew,
+        muted: false
+      }
     }
-  }
 
-  case actionTypes.TOGGLE_PAUSE: {
+    case actionTypes.TOGGLE_PAUSE: {
+      state.isPause ? state.videoEl.play() : state.videoEl.pause()
 
-    state.isPause
-      ? state.videoEl.play()
-      : state.videoEl.pause()
-
-    return {
-      ...state,
-      isPause: !state.isPause
+      return {
+        ...state,
+        isPause: !state.isPause
+      }
     }
-  }
 
-  case actionTypes.TOGGLE_MUTE: {
+    case actionTypes.TOGGLE_MUTE: {
+      state.videoEl.muted = !state.muted
 
-    state.videoEl.muted = !state.muted
-
-    return {
-      ...state,
-      muted: !state.muted
+      return {
+        ...state,
+        muted: !state.muted
+      }
     }
-  }
 
-  case actionTypes.TIME_UPDATE: {
-    return {
-      ...state,
-      currentTime: action.time
+    case actionTypes.TIME_UPDATE: {
+      return {
+        ...state,
+        currentTime: action.time
+      }
     }
-  }
 
-  case actionTypes.TOGGLE_FULLSCREEN: {
+    case actionTypes.TOGGLE_FULLSCREEN: {
+      state.isFullscreen
+        ? fullscreen(state.videoEl.parentNode).release()
+        : fullscreen(state.videoEl.parentNode).request()
 
-    state.isFullscreen
-      ? fullscreen(state.videoEl.parentNode).release()
-      : fullscreen(state.videoEl.parentNode).request()
-
-    return {
-      ...state,
-      isFullscreen: !state.isFullscreen
+      return {
+        ...state,
+        isFullscreen: !state.isFullscreen
+      }
     }
-  }
 
-  case actionTypes.TOGGLE_SHOW_CONTROLS: {
-    return {
-      ...state,
-      showControls: !state.showControls
+    case actionTypes.TOGGLE_SHOW_CONTROLS: {
+      return {
+        ...state,
+        showControls: !state.showControls
+      }
     }
-  }
 
-  default: {
-    return state
-  }
+    default: {
+      return state
+    }
   }
 }
 

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import TopControlsContainer from '../../containers/TopControlsContainer'
 import BottomControlsContainer from '../../containers/BottomControlsContainer'
 
-const Controls = () => 
+const Controls = () =>
   <Root>
     <TopControlsContainer />
     <BottomControlsContainer />

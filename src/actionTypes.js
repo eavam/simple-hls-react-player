@@ -1,4 +1,3 @@
-
 export const SET_VIDEO_ELEMENT = 'SET_VIDEO_ELEMENT'
 export const CHANGE_VOLUME = 'CHANGE_VOLUME'
 export const TOGGLE_PAUSE = 'TOGGLE_PAUSE'

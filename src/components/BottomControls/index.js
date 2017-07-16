@@ -16,18 +16,14 @@ const BottomControls = ({
   togglePause,
   toggleMute,
   handleChangeVolume,
-  toggleFullscreen,
+  toggleFullscreen
 }) => {
-
   return (
     <Root>
       <FlexColumns>
 
         <LeftColumn>
-          <PlayPauseControl
-            isPause={isPause}
-            onClick={togglePause}
-          />
+          <PlayPauseControl isPause={isPause} onClick={togglePause} />
           <SoundControl
             onMouseDown={handleChangeVolume}
             onClick={toggleMute}
@@ -38,10 +34,7 @@ const BottomControls = ({
 
         <RightColumn>
           <CurrentTime time={time} />
-          <Fullscreen
-            isFullscreen={isFullscreen}
-            onClick={toggleFullscreen}
-          />
+          <Fullscreen isFullscreen={isFullscreen} onClick={toggleFullscreen} />
         </RightColumn>
 
       </FlexColumns>

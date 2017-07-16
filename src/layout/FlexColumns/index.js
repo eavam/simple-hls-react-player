@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const FlexColumns = ({ children }) => 
+export const FlexColumns = ({ children }) =>
   <Root>
     {children}
   </Root>
-
 
 const flexCommon = styled.div`
   flex: 1;

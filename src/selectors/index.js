@@ -1,4 +1,3 @@
-
 export const getTitle = state => state.title
 export const getPause = state => state.isPause
 export const getVolume = state => state.volume

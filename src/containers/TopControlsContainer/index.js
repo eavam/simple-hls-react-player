@@ -3,7 +3,6 @@ import { createStructuredSelector } from 'reselect'
 import TopControls from '../../components/TopControls'
 import { getTitle } from '../../selectors'
 
-
 const mapStateToProps = createStructuredSelector({
   title: getTitle
 })

@@ -54,7 +54,7 @@ const BottomControls = ({
 BottomControls.propTypes = {
   isFullscreen: PropTypes.bool,
   isPause: PropTypes.bool,
-  volume: PropTypes.string,
+  volume: PropTypes.number,
   muted: PropTypes.bool,
   time: PropTypes.string,
   togglePause: PropTypes.func.isRequired,
@@ -66,7 +66,7 @@ BottomControls.propTypes = {
 BottomControls.defaultProps = {
   isFullscreen: false,
   isPause: false,
-  volume: '0',
+  volume: 0,
   muted: false,
   time: '00:00'
 };

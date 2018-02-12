@@ -49,6 +49,7 @@
     "*.{js,css,md}": [
       "prettier --write",
       "eslint --fix",
+      "react-scripts test --env=jsdom",
       "git add"
     ]
   },

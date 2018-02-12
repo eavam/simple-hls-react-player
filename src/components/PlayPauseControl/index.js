@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
+import styled from 'react-emotion';
+
+import { baseIcon } from '../styledComponens';
 import { PlayIcon, PauseIcon } from '../svg-icons';
 
 const PlayPauseControl = ({ isPause, onClick }) => (
@@ -17,7 +19,8 @@ PlayPauseControl.defaultProps = {
   onClick: () => {}
 };
 
-const Root = Icon.extend`
+const Root = styled('div')`
+  ${baseIcon};
   margin-right: 20px;
 `;
 

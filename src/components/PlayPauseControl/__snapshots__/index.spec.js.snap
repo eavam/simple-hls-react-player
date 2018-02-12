@@ -2,7 +2,7 @@
 
 exports[`PlayPauseControl 1`] = `
 <div
-  className="sc-bwzfXH knKTcO"
+  className="css-12grdtp"
   onClick={[Function]}
 >
   <svg
@@ -18,7 +18,7 @@ exports[`PlayPauseControl 1`] = `
 
 exports[`PlayPauseControl 2`] = `
 <div
-  className="sc-bwzfXH knKTcO"
+  className="css-12grdtp"
   onClick={[Function]}
 >
   <svg

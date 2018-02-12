@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import styled from 'react-emotion';
 import TopControlsContainer from '../../containers/TopControlsContainer';
 import BottomControlsContainer from '../../containers/BottomControlsContainer';
 
@@ -11,7 +10,7 @@ const Controls = () => (
   </Root>
 );
 
-const Root = styled.div`
+const Root = styled('div')`
   position: absolute;
   top: 0;
   left: 0;

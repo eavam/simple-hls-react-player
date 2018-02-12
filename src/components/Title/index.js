@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 
 const Title = ({ title }) => <Root>{title}</Root>;
@@ -12,7 +12,7 @@ Title.defaultProps = {
   title: ''
 };
 
-const Root = styled.div`
+const Root = styled('div')`
   color: #fff;
   font-size: 30px;
 `;

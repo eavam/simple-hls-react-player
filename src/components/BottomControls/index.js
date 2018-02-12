@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
-import { FlexColumns, LeftColumn, RightColumn } from '../../layout/FlexColumns';
+import { flexContainer, flexLeft, flexRight } from '../styledComponens';
 import PlayPauseControl from '../PlayPauseControl';
 import SoundControl from '../SoundControl';
 import CurrentTime from '../CurrentTime';
 import Fullscreen from '../Fullscreen';
 
-const Root = styled.div`
+const Root = styled('div')`
+  ${flexContainer};
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: 100px;
-  display: flex;
   align-items: center;
   padding: 0 2%;
   box-shadow: inset 0px -100px 60px -35px black;
@@ -32,22 +32,20 @@ const BottomControls = ({
   toggleFullscreen
 }) => (
   <Root>
-    <FlexColumns>
-      <LeftColumn>
-        <PlayPauseControl isPause={isPause} onClick={togglePause} />
-        <SoundControl
-          onMouseDown={handleChangeVolume}
-          onClick={toggleMute}
-          volume={volume}
-          muted={muted}
-        />
-      </LeftColumn>
+    <div className={flexLeft}>
+      <PlayPauseControl isPause={isPause} onClick={togglePause} />
+      <SoundControl
+        onMouseDown={handleChangeVolume}
+        onClick={toggleMute}
+        volume={volume}
+        muted={muted}
+      />
+    </div>
 
-      <RightColumn>
-        <CurrentTime time={time} />
-        <Fullscreen isFullscreen={isFullscreen} onClick={toggleFullscreen} />
-      </RightColumn>
-    </FlexColumns>
+    <div className={flexRight}>
+      <CurrentTime time={time} />
+      <Fullscreen isFullscreen={isFullscreen} onClick={toggleFullscreen} />
+    </div>
   </Root>
 );
 

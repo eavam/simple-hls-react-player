@@ -2,75 +2,72 @@
 
 exports[`BottomControls 1`] = `
 <div
-  className="sc-iwsKbI iejwSF"
+  className="css-w74n7p"
 >
   <div
-    className="sc-bwzfXH bGsBfn"
+    className="css-jhr5er"
   >
     <div
-      className="sc-htpNat fBXiUS"
+      className="css-12grdtp"
+      onClick={[Function]}
     >
-      <div
-        className="sc-EHOje fyQfvp"
-        onClick={[Function]}
+      <svg
+        viewBox="0 0 20.03 25"
       >
-        <svg
-          viewBox="0 0 20.03 25"
-        >
-          <path
-            d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
-            fill="#fff"
-          />
-        </svg>
-      </div>
-      <div
-        className="sc-bZQynM jdkaLI"
-      >
-        <div
-          className="sc-ifAKCX iePiCe"
-          onClick={[Function]}
-        >
-          <svg
-            viewBox="0 0 27 27"
-          >
-            <path
-              d="M20.45 3.13a1.64 1.64 0 0 0-2.66-1.29L12.52 6a3.19 3.19 0 0 0-.9-.13H9.37l11.08 11.04zM3 9v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23a1.64 1.64 0 0 0 2.66-1.3V24L3.62 7.16A3.18 3.18 0 0 0 3 9zm23.71 16.29l-25-25A1 1 0 0 0 .29 1.71l25 25a1 1 0 0 0 1.41-1.41z"
-              fill="#fff"
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-gzVnrw sqRvG"
-          muted={true}
-          onMouseDown={[Function]}
+        <path
+          d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
+          fill="#fff"
         />
-      </div>
+      </svg>
     </div>
     <div
-      className="sc-bxivhb cTRGsJ"
+      className="css-1sg2lsz"
     >
       <div
-        className="sc-htoDjs keEXhW"
-      >
-        04:34
-      </div>
-      <div
-        className="sc-dnqmqq hoYEZT"
+        className="css-1htvj9q"
         onClick={[Function]}
+        role="presentation"
       >
         <svg
-          viewBox="0 0 25 25"
+          viewBox="0 0 27 27"
         >
           <path
-            d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
-            fill="#fff"
-          />
-          <path
-            d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
+            d="M20.45 3.13a1.64 1.64 0 0 0-2.66-1.29L12.52 6a3.19 3.19 0 0 0-.9-.13H9.37l11.08 11.04zM3 9v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23a1.64 1.64 0 0 0 2.66-1.3V24L3.62 7.16A3.18 3.18 0 0 0 3 9zm23.71 16.29l-25-25A1 1 0 0 0 .29 1.71l25 25a1 1 0 0 0 1.41-1.41z"
             fill="#fff"
           />
         </svg>
       </div>
+      <div
+        className="css-hvewp1"
+        muted={true}
+        onMouseDown={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="css-1kjcql6"
+  >
+    <div
+      className="css-mzstqo"
+    >
+      04:34
+    </div>
+    <div
+      className="css-1yncnvt"
+      onClick={[Function]}
+    >
+      <svg
+        viewBox="0 0 25 25"
+      >
+        <path
+          d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
+          fill="#fff"
+        />
+        <path
+          d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
+          fill="#fff"
+        />
+      </svg>
     </div>
   </div>
 </div>

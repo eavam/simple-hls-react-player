@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import Title from '../Title';
 
-const Root = styled.div`
+const Root = styled('div')`
   position: absolute;
   top: 0;
   left: 0;

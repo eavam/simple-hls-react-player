@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Icon from '../Icon';
+import styled from 'react-emotion';
+import { baseIcon } from '../styledComponens';
 import { SoundIcon, OffIcon } from '../svg-icons';
 
 const SoundControl = ({ volume, muted, onClick, onMouseDown }) => (
   <Root>
-    <Icon onClick={onClick}>{muted ? <OffIcon /> : <SoundIcon />}</Icon>
+    <div className={baseIcon} onClick={onClick} role="presentation">
+      {muted ? <OffIcon /> : <SoundIcon />}
+    </div>
     <VolumeControl onMouseDown={onMouseDown} muted={muted} volume={volume} />
   </Root>
 );
@@ -25,11 +27,11 @@ SoundControl.defaultProps = {
   onMouseDown: () => {}
 };
 
-const Root = styled.div`
+const Root = styled('div')`
   display: flex;
   align-items: center;
 `;
-const VolumeControl = styled.div`
+const VolumeControl = styled('div')`
   position: relative;
   cursor: pointer;
   height: 5px;

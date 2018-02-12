@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../Icon';
+import styled from 'react-emotion';
+import { baseIcon } from '../styledComponens';
 import { FullIcon, WindowIcon } from '../svg-icons';
 
 const Fullsreen = ({ isFullscreen, onClick }) => (
@@ -17,7 +18,8 @@ Fullsreen.defaultProps = {
   onClick: () => {}
 };
 
-const Root = Icon.extend`
+const Root = styled('div')`
+  ${baseIcon};
   margin-left: 20px;
 `;
 

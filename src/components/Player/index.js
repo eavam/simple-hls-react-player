@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import { onlyUpdateForKeys } from 'recompose';
 import PropTypes from 'prop-types';
 import Controls from '../Controls';
@@ -26,7 +26,7 @@ Player.defaultProps = {
   isFullscreen: false
 };
 
-const Root = styled.div`
+const Root = styled('div')`
   width: ${props => (props.isFullscreen ? '100%' : '1280px')};
   height: ${props => (props.isFullscreen ? '100%' : '720px')};
   margin: 0 auto;

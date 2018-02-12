@@ -2,7 +2,7 @@
 
 exports[`VideoTag 1`] = `
 <video
-  className="sc-bdVaJa fUgVbA"
+  className="css-1d17s4f"
   controls={false}
 />
 `;

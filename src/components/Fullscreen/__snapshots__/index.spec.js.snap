@@ -2,7 +2,7 @@
 
 exports[`Fullscreen 1`] = `
 <div
-  className="sc-bwzfXH bAvfVf"
+  className="css-1yncnvt"
   onClick={[Function]}
 >
   <svg
@@ -22,7 +22,7 @@ exports[`Fullscreen 1`] = `
 
 exports[`Fullscreen 2`] = `
 <div
-  className="sc-bwzfXH bAvfVf"
+  className="css-1yncnvt"
   onClick={[Function]}
 >
   <svg

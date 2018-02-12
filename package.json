@@ -20,19 +20,20 @@
     "redux-mock-store": "^1.5.1"
   },
   "dependencies": {
+    "emotion": "^9.0.0",
     "eslint-config-prettier": "^2.9.0",
     "fullscreen": "^1.1.1",
     "hls.js": "^0.8.9",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-emotion": "^9.0.0",
     "react-redux": "^5.0.6",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-act": "^1.7.1",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1",
-    "styled-components": "^3.1.6"
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

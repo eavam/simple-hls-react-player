@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
 const CurrentTime = ({ time }) => <Root>{time}</Root>;
 
@@ -12,7 +12,7 @@ CurrentTime.defaultProps = {
   time: '00:00'
 };
 
-const Root = styled.div`
+const Root = styled('div')`
   font-size: 19px;
   color: #fff;
 `;

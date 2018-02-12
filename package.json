@@ -45,9 +45,9 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": [
+    "*.{js,css,md}": [
       "prettier --write",
-      "eslint --fix --strict",
+      "eslint --fix",
       "git add"
     ]
   },

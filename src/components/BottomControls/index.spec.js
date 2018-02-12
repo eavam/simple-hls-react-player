@@ -11,7 +11,8 @@ test('BottomControls', () => {
     time: '04:34',
     handleChangeVolume: () => {},
     togglePause: () => {},
-    toggleMute: () => {}
+    toggleMute: () => {},
+    toggleFullscreen: () => {}
   };
 
   const component = renderer.create(<BottomControls {...props} />);

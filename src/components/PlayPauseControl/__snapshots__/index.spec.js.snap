@@ -6,7 +6,6 @@ exports[`PlayPauseControl 1`] = `
   onClick={[Function]}
 >
   <svg
-    className={undefined}
     viewBox="0 0 20.03 25"
   >
     <path
@@ -23,7 +22,6 @@ exports[`PlayPauseControl 2`] = `
   onClick={[Function]}
 >
   <svg
-    className={undefined}
     viewBox="0 0 21.97 25"
   >
     <path

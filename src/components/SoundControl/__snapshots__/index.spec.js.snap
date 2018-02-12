@@ -6,10 +6,9 @@ exports[`SoundControl 1`] = `
 >
   <div
     className="sc-bdVaJa cEikMS"
-    onClick={undefined}
+    onClick={[Function]}
   >
     <svg
-      className={undefined}
       viewBox="0 0 17.45 24.61"
     >
       <path
@@ -21,7 +20,7 @@ exports[`SoundControl 1`] = `
   <div
     className="sc-htpNat kqvEeD"
     muted={false}
-    onMouseDown={undefined}
+    onMouseDown={[Function]}
   />
 </div>
 `;
@@ -32,10 +31,9 @@ exports[`SoundControl 2`] = `
 >
   <div
     className="sc-bdVaJa cEikMS"
-    onClick={undefined}
+    onClick={[Function]}
   >
     <svg
-      className={undefined}
       viewBox="0 0 27 27"
     >
       <path
@@ -47,7 +45,7 @@ exports[`SoundControl 2`] = `
   <div
     className="sc-htpNat iOuWQK"
     muted={true}
-    onMouseDown={undefined}
+    onMouseDown={[Function]}
   />
 </div>
 `;

@@ -6,7 +6,6 @@ exports[`Fullscreen 1`] = `
   onClick={[Function]}
 >
   <svg
-    className={undefined}
     viewBox="0 0 25 25"
   >
     <path
@@ -27,7 +26,6 @@ exports[`Fullscreen 2`] = `
   onClick={[Function]}
 >
   <svg
-    className={undefined}
     viewBox="0 0 25 25"
   >
     <path

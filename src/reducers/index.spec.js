@@ -3,7 +3,7 @@ import reducer from './index';
 describe('reducers', () => {
   const initState = {
     videoEl: null,
-    title: 'Test title',
+    title: 'Star Wars',
     volume: '0',
     isPause: false,
     muted: false,

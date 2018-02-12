@@ -15,7 +15,6 @@ exports[`BottomControls 1`] = `
         onClick={[Function]}
       >
         <svg
-          className={undefined}
           viewBox="0 0 20.03 25"
         >
           <path
@@ -32,7 +31,6 @@ exports[`BottomControls 1`] = `
           onClick={[Function]}
         >
           <svg
-            className={undefined}
             viewBox="0 0 27 27"
           >
             <path
@@ -58,10 +56,9 @@ exports[`BottomControls 1`] = `
       </div>
       <div
         className="sc-dnqmqq hoYEZT"
-        onClick={undefined}
+        onClick={[Function]}
       >
         <svg
-          className={undefined}
           viewBox="0 0 25 25"
         >
           <path

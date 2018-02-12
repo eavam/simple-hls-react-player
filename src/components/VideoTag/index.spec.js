@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { VideoTag } from './index';
+import VideoTag from './index';
 
 test('VideoTag', () => {
   const props = {

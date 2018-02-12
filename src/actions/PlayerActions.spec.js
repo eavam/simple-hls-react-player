@@ -2,6 +2,7 @@ import * as actions from './PlayerActions';
 
 test('PlayerAction => volumeMouseMove default', () => {
   const init = {
+    error: false,
     payload: {
       volume: {
         volumeNew: 184,
@@ -31,6 +32,7 @@ test('PlayerAction => volumeMouseMove default', () => {
 
 test('PlayerAction => volumeMouseMove new volume > maxPoint', () => {
   const init = {
+    error: false,
     payload: {
       volume: {
         volumeNew: 320,
@@ -60,6 +62,7 @@ test('PlayerAction => volumeMouseMove new volume > maxPoint', () => {
 
 test('PlayerAction => volumeMouseMove new volume < 0', () => {
   const init = {
+    error: false,
     payload: {
       volume: {
         volumeNew: 0,

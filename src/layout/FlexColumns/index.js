@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const FlexColumns = ({ children }) => <Root>{children}</Root>;
 
 FlexColumns.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired
 };
 
 const flexCommon = styled.div`

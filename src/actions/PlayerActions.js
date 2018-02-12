@@ -85,14 +85,12 @@ const videoInitialState = (_, el) => dispatch => {
   dispatch(actionTypes.toggleShowControls());
 };
 
-export const videoInit = () => (dispatch, getState) => {
+export const videoInit = url => (dispatch, getState) => {
   const { videoEl } = getState();
 
   if (videoEl && !hls) {
     hls = new Hls();
-    hls.loadSource(
-      'https://cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8'
-    );
+    hls.loadSource(url);
     hls.attachMedia(videoEl);
     hls.on(Hls.Events.MANIFEST_PARSED, event => dispatch(videoInitialState(event, videoEl)));
   }

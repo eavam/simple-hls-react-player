@@ -1,6 +1,6 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import BottomControls from './index.js'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import BottomControls from './index';
 
 test('BottomControls', () => {
   const props = {
@@ -12,9 +12,9 @@ test('BottomControls', () => {
     handleChangeVolume: () => {},
     togglePause: () => {},
     toggleMute: () => {}
-  }
+  };
 
-  const component = renderer.create(<BottomControls {...props} />)
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  const component = renderer.create(<BottomControls {...props} />);
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

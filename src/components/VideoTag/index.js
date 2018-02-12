@@ -1,8 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { shouldUpdate } from 'recompose'
-
-export const VideoTag = ({ setVideoEl }) => <Video controls={false} innerRef={setVideoEl} />
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { shouldUpdate } from 'recompose';
 
 const Video = styled.video`
   width: 100%;
@@ -10,6 +9,12 @@ const Video = styled.video`
   min-width: 100%;
   min-height: 100%;
   background-color: black;
-`
+`;
 
-export default shouldUpdate(() => false)(VideoTag)
+const VideoTag = ({ setVideoEl }) => <Video controls={false} innerRef={setVideoEl} />;
+
+VideoTag.propTypes = {
+  setVideoEl: PropTypes.func.isRequired
+};
+
+export default shouldUpdate(() => false)(VideoTag);

@@ -1,14 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const SvgIcon = ({ viewBox, className, children }) =>
+const SvgIcon = ({ viewBox, className, children }) => (
   <svg viewBox={viewBox} className={className}>
     {children}
   </svg>
+);
 
 SvgIcon.propTypes = {
   viewBox: PropTypes.string,
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+  children: PropTypes.element.isRequired
+};
 
-export default SvgIcon
+SvgIcon.defaultProps = {
+  className: '',
+  viewBox: ''
+};
+
+export default SvgIcon;

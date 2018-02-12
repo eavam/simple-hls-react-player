@@ -1,14 +1,13 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import { mount } from 'enzyme'
-import Title from './index.js'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Title from './index';
 
 test('Title', () => {
   const props = {
     title: 'Test'
-  }
+  };
 
-  const component = renderer.create(<Title {...props} />)
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  const component = renderer.create(<Title {...props} />);
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

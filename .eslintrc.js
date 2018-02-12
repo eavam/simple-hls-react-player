@@ -1,31 +1,11 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest/globals": true
+  env: {
+    browser: true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jest/recommended",
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react"
-  ],
-  "parserOptions": {
-    "ecmaVersion": 7,
-      "ecmaFeatures": {
-        "experimentalObjectRestSpread": true,
-        "jsx": true
-      },
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react",
-    "jest",
-    "prettier"
-  ],
-  "rules": {
-    "prettier/prettier": ["error", {"singleQuote": true, "semi": false, "printWidth": 100, "trailingComma": "none", "parser": "flow"}]
+  plugins: ['prettier', 'jest'],
+  extends: ['airbnb', 'plugin:jest/recommended', 'prettier'],
+  rules: {
+    'react/jsx-filename-extension': [0, { extension: ['.js', '.jsx'] }],
+    'prettier/prettier': ['error', { singleQuote: true }]
   }
 };

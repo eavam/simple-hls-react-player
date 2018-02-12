@@ -1,21 +1,21 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import Fullscreen from './index.js'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Fullscreen from './index';
 
 test('Fullscreen', () => {
   const props = {
     isFullscreen: false,
     onClick: () => {}
-  }
+  };
 
-  let component = renderer.create(<Fullscreen {...props} />)
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
+  let component = renderer.create(<Fullscreen {...props} />);
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 
-  props.isFullscreen = true
+  props.isFullscreen = true;
 
-  component = renderer.create(<Fullscreen {...props} />)
+  component = renderer.create(<Fullscreen {...props} />);
 
-  tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

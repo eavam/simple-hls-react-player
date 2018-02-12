@@ -1,6 +1,6 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import SoundControl from './index.js'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import SoundControl from './index';
 
 test('SoundControl', () => {
   const props = {
@@ -8,15 +8,15 @@ test('SoundControl', () => {
     muted: false,
     toggleMute: () => {},
     handleChangeVolume: () => {}
-  }
+  };
 
-  let component = renderer.create(<SoundControl {...props} />)
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
+  let component = renderer.create(<SoundControl {...props} />);
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 
-  props.muted = true
+  props.muted = true;
 
-  component = renderer.create(<SoundControl {...props} />)
-  tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  component = renderer.create(<SoundControl {...props} />);
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

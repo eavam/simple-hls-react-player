@@ -1,5 +1,4 @@
-import reducer from './index.js'
-import * as actionTypes from '../actionTypes.js'
+import reducer from './index';
 
 describe('reducers', () => {
   const initState = {
@@ -11,11 +10,11 @@ describe('reducers', () => {
     currentTime: '00:00',
     isFullscreen: false,
     showControls: false
-  }
+  };
 
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual(initState)
-  })
+    expect(reducer(undefined, {})).toEqual(initState);
+  });
 
   /* it('should handle TOGGLE_PAUSE', () => {
     const video = document.createElement('video')
@@ -26,4 +25,4 @@ describe('reducers', () => {
       isPause: true
     })
   }) */
-})
+});

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Icon = styled.div`
+export default styled.div`
   width: 25px;
   height: 25px;
   padding: 5px;
@@ -11,4 +11,4 @@ export const Icon = styled.div`
     width: 100%;
     height: 100%;
   }
-`
+`;

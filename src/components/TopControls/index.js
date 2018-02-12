@@ -1,11 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import Title from '../Title'
-
-const TopControls = ({ title }) =>
-  <Root>
-    <Title title={title} />
-  </Root>
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Title from '../Title';
 
 const Root = styled.div`
   position: absolute;
@@ -17,6 +13,20 @@ const Root = styled.div`
   align-items: center;
   padding: 0 2%;
   box-shadow: inset 0px 100px 60px -35px black;
-`
+`;
 
-export default TopControls
+const TopControls = ({ title }) => (
+  <Root>
+    <Title title={title} />
+  </Root>
+);
+
+TopControls.propTypes = {
+  title: PropTypes.string
+};
+
+TopControls.defaultProps = {
+  title: ''
+};
+
+export default TopControls;

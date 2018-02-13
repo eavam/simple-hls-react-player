@@ -77,21 +77,19 @@ const actionTimeUpdate = event => dispatch => {
   dispatch(actionTypes.timeUpdate(`${minute}:${seconds}`));
 };
 
-const videoInitialState = (_, el) => dispatch => {
-  const videoEl = el;
+const videoInitialState = videoElement => dispatch => {
+  const videoEl = videoElement;
   videoEl.play();
   videoEl.volume = 0;
   videoEl.addEventListener('timeupdate', event => dispatch(actionTimeUpdate(event)));
   dispatch(actionTypes.toggleShowControls());
 };
 
-export const videoInit = url => (dispatch, getState) => {
-  const { videoEl } = getState();
-
-  if (videoEl && !hls) {
+export const videoInit = (url, videoElement) => dispatch => {
+  if (videoElement && !hls) {
     hls = new Hls();
     hls.loadSource(url);
-    hls.attachMedia(videoEl);
-    hls.on(Hls.Events.MANIFEST_PARSED, event => dispatch(videoInitialState(event, videoEl)));
+    hls.attachMedia(videoElement);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => dispatch(videoInitialState(videoElement)));
   }
 };

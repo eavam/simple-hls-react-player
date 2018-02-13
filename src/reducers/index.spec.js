@@ -5,7 +5,7 @@ describe('reducers', () => {
     videoEl: null,
     title: 'Star Wars',
     volume: '0',
-    isPause: false,
+    typeActionPlayer: 'play',
     muted: false,
     currentTime: '00:00',
     isFullscreen: false,
@@ -15,14 +15,4 @@ describe('reducers', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual(initState);
   });
-
-  /* it('should handle TOGGLE_PAUSE', () => {
-    const video = document.createElement('video')
-
-    expect(reducer({ ...initState, videoEl: video }, { type: actionTypes.TOGGLE_PAUSE })).toEqual({
-      ...initState,
-      videoEl: video,
-      isPause: true
-    })
-  }) */
 });

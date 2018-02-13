@@ -4,7 +4,7 @@ import PlayPauseControl from './index';
 
 test('PlayPauseControl', () => {
   const props = {
-    isPause: false,
+    typeActionPlayer: 'play',
     onClick: () => {}
   };
 
@@ -12,7 +12,7 @@ test('PlayPauseControl', () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  props.isPause = true;
+  props.typeActionPlayer = 'pause';
   component = renderer.create(<PlayPauseControl {...props} />);
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();

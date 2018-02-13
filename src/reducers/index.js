@@ -1,12 +1,11 @@
-import fullscreen from 'fullscreen';
 import { createReducer } from 'redux-act';
 import * as actionTypes from '../actionTypes';
 
 const initState = {
-  videoEl: null,
   title: 'Star Wars',
-  volume: '0',
-  isPause: false,
+  volume: 0,
+  volumeNumber: 0,
+  typeActionPlayer: 'play',
   muted: false,
   currentTime: '00:00',
   isFullscreen: false,
@@ -15,66 +14,32 @@ const initState = {
 
 const playerReducer = createReducer(
   {
-    [actionTypes.setVideoEl]: (state, action) => ({
+    [actionTypes.changeVolume]: (state, action) => ({
       ...state,
-      videoEl: action.element
+      volume: action.volume.volumeNew,
+      volumeNumber: action.volume.volumeNumber,
+      muted: false
     }),
 
-    [actionTypes.changeVolume]: (state, action) => {
-      const { volumeNumber, volumeNew } = action.volume;
-      const { videoEl } = state;
+    [actionTypes.togglePause]: state => ({
+      ...state,
+      typeActionPlayer: state.typeActionPlayer === 'play' ? 'pause' : 'play'
+    }),
 
-      videoEl.muted = false;
-      videoEl.volume = volumeNumber;
-
-      return {
-        ...state,
-        volume: volumeNew,
-        muted: false
-      };
-    },
-
-    [actionTypes.togglePause]: state => {
-      if (state.isPause) {
-        state.videoEl.play();
-      } else {
-        state.videoEl.pause();
-      }
-
-      return {
-        ...state,
-        isPause: !state.isPause
-      };
-    },
-
-    [actionTypes.toggleMute]: state => {
-      const { videoEl } = state;
-
-      videoEl.muted = !state.muted;
-
-      return {
-        ...state,
-        muted: !state.muted
-      };
-    },
+    [actionTypes.toggleMute]: state => ({
+      ...state,
+      muted: !state.muted
+    }),
 
     [actionTypes.timeUpdate]: (state, action) => ({
       ...state,
       currentTime: action.time
     }),
 
-    [actionTypes.toggleFullscreen]: state => {
-      if (state.isFullscreen) {
-        fullscreen(state.videoEl.parentNode).release();
-      } else {
-        fullscreen(state.videoEl.parentNode).request();
-      }
-
-      return {
-        ...state,
-        isFullscreen: !state.isFullscreen
-      };
-    },
+    [actionTypes.toggleFullscreen]: state => ({
+      ...state,
+      isFullscreen: !state.isFullscreen
+    }),
 
     [actionTypes.toggleShowControls]: state => ({
       ...state,

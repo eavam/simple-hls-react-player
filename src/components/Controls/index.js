@@ -45,7 +45,7 @@ const Bottom = styled('div')`
 const Controls = ({
   title,
   isFullscreen,
-  isPause,
+  typeActionPlayer,
   volume,
   muted,
   time,
@@ -58,7 +58,7 @@ const Controls = ({
     <Title>{title}</Title>
     <Bottom>
       <div className={flexLeft}>
-        <PlayPauseControl isPause={isPause} onClick={togglePause} />
+        <PlayPauseControl typeActionPlayer={typeActionPlayer} onClick={togglePause} />
         <SoundControl
           onMouseDown={handleChangeVolume}
           onClick={toggleMute}
@@ -78,7 +78,7 @@ const Controls = ({
 Controls.propTypes = {
   title: PropTypes.string,
   isFullscreen: PropTypes.bool,
-  isPause: PropTypes.bool,
+  typeActionPlayer: PropTypes.oneOf(['play', 'pause']).isRequired,
   volume: PropTypes.number,
   muted: PropTypes.bool,
   time: PropTypes.string,
@@ -91,7 +91,6 @@ Controls.propTypes = {
 Controls.defaultProps = {
   title: '',
   isFullscreen: false,
-  isPause: false,
   volume: 0,
   muted: false,
   time: '00:00'

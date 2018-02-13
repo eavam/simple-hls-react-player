@@ -2,21 +2,20 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import SoundControl from './index';
 
-test('SoundControl', () => {
-  const props = {
-    volume: '34',
-    muted: false,
-    toggleMute: () => {},
-    handleChangeVolume: () => {}
-  };
-
-  let component = renderer.create(<SoundControl {...props} />);
-  let tree = component.toJSON();
+test('SoundControl default', () => {
+  const component = renderer.create(<SoundControl />);
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
 
-  props.muted = true;
+test('SoundControl volume', () => {
+  const component = renderer.create(<SoundControl volume={23} />);
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 
-  component = renderer.create(<SoundControl {...props} />);
-  tree = component.toJSON();
+test('SoundControl muted false', () => {
+  const component = renderer.create(<SoundControl muted={false} />);
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

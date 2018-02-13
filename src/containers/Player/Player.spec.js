@@ -5,17 +5,14 @@ import configureStore from 'redux-mock-store';
 import { Player } from './Player';
 
 test('PlayerContainer', () => {
-  const props = {
-    showControls: true,
-    isFullscreen: false,
-    videoEl: document.createElement('video')
-  };
-
   const mockStore = configureStore();
+  const store = mockStore({
+    typeActionPlayer: 'play'
+  });
 
   const component = renderer.create(
-    <Provider store={mockStore()}>
-      <Player {...props} />
+    <Provider store={store}>
+      <Player />
     </Provider>
   );
   const tree = component.toJSON();

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Fullscreen 1`] = `
+exports[`Fullscreen default 1`] = `
 <div
   className="css-1yncnvt"
   onClick={[Function]}
@@ -20,7 +20,7 @@ exports[`Fullscreen 1`] = `
 </div>
 `;
 
-exports[`Fullscreen 2`] = `
+exports[`Fullscreen true 1`] = `
 <div
   className="css-1yncnvt"
   onClick={[Function]}

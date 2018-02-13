@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Current time  1`] = `
+exports[`Current time 03:23 1`] = `
 <div
   className="css-mzstqo"
 >
   03:23
+</div>
+`;
+
+exports[`Current time default 1`] = `
+<div
+  className="css-mzstqo"
+>
+  00:00
 </div>
 `;

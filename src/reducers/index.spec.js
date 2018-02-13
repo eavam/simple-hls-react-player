@@ -2,9 +2,9 @@ import reducer from './index';
 
 describe('reducers', () => {
   const initState = {
-    videoEl: null,
     title: 'Star Wars',
-    volume: '0',
+    volume: 0,
+    volumeNumber: 0,
     typeActionPlayer: 'play',
     muted: false,
     currentTime: '00:00',

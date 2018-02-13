@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SoundControl 1`] = `
+exports[`SoundControl default 1`] = `
 <div
   className="css-1sg2lsz"
 >
@@ -19,14 +19,14 @@ exports[`SoundControl 1`] = `
     </svg>
   </div>
   <div
-    className="css-jx27zf"
+    className="css-hvewp1"
     muted={false}
     onMouseDown={[Function]}
   />
 </div>
 `;
 
-exports[`SoundControl 2`] = `
+exports[`SoundControl muted false 1`] = `
 <div
   className="css-1sg2lsz"
 >
@@ -36,17 +36,43 @@ exports[`SoundControl 2`] = `
     role="presentation"
   >
     <svg
-      viewBox="0 0 27 27"
+      viewBox="0 0 17.45 24.61"
     >
       <path
-        d="M20.45 3.13a1.64 1.64 0 0 0-2.66-1.29L12.52 6a3.19 3.19 0 0 0-.9-.13H9.37l11.08 11.04zM3 9v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23a1.64 1.64 0 0 0 2.66-1.3V24L3.62 7.16A3.18 3.18 0 0 0 3 9zm23.71 16.29l-25-25A1 1 0 0 0 .29 1.71l25 25a1 1 0 0 0 1.41-1.41z"
+        d="M16.52.17a1.64 1.64 0 0 0-1.73.18L9.52 4.48a3.2 3.2 0 0 0-.9-.13H3.21A3.21 3.21 0 0 0 0 7.56v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23A1.64 1.64 0 0 0 17.45 23V1.64a1.64 1.64 0 0 0-.93-1.47zm0 0"
         fill="#fff"
       />
     </svg>
   </div>
   <div
     className="css-hvewp1"
-    muted={true}
+    muted={false}
+    onMouseDown={[Function]}
+  />
+</div>
+`;
+
+exports[`SoundControl volume 1`] = `
+<div
+  className="css-1sg2lsz"
+>
+  <div
+    className="css-1htvj9q"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <svg
+      viewBox="0 0 17.45 24.61"
+    >
+      <path
+        d="M16.52.17a1.64 1.64 0 0 0-1.73.18L9.52 4.48a3.2 3.2 0 0 0-.9-.13H3.21A3.21 3.21 0 0 0 0 7.56v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23A1.64 1.64 0 0 0 17.45 23V1.64a1.64 1.64 0 0 0-.93-1.47zm0 0"
+        fill="#fff"
+      />
+    </svg>
+  </div>
+  <div
+    className="css-1m4e3bc"
+    muted={false}
     onMouseDown={[Function]}
   />
 </div>

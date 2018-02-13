@@ -9,7 +9,7 @@ test('PlayerAction => volumeMouseMove default', () => {
         volumeNumber: 0.575
       }
     },
-    type: '[8] changeVolume'
+    type: '[7] changeVolume'
   };
 
   const event = {
@@ -39,7 +39,7 @@ test('PlayerAction => volumeMouseMove new volume > maxPoint', () => {
         volumeNumber: 1
       }
     },
-    type: '[8] changeVolume'
+    type: '[7] changeVolume'
   };
 
   const event = {
@@ -69,7 +69,7 @@ test('PlayerAction => volumeMouseMove new volume < 0', () => {
         volumeNumber: 0
       }
     },
-    type: '[8] changeVolume'
+    type: '[7] changeVolume'
   };
 
   const event = {

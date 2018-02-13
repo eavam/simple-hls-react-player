@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PlayPauseControl 1`] = `
-<div
-  className="css-12grdtp"
-  onClick={[Function]}
->
-  <svg
-    viewBox="0 0 20.03 25"
-  >
-    <path
-      d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
-      fill="#fff"
-    />
-  </svg>
-</div>
-`;
-
-exports[`PlayPauseControl 2`] = `
+exports[`PlayPauseControl pause 1`] = `
 <div
   className="css-12grdtp"
   onClick={[Function]}
@@ -26,6 +10,22 @@ exports[`PlayPauseControl 2`] = `
   >
     <path
       d="M21.36 11.45L1.81.16A1.21 1.21 0 0 0 0 1.21v22.58a1.21 1.21 0 0 0 1.81 1l19.55-11.24a1.22 1.22 0 0 0 0-2.11zm0 0"
+      fill="#fff"
+    />
+  </svg>
+</div>
+`;
+
+exports[`PlayPauseControl play 1`] = `
+<div
+  className="css-12grdtp"
+  onClick={[Function]}
+>
+  <svg
+    viewBox="0 0 20.03 25"
+  >
+    <path
+      d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
       fill="#fff"
     />
   </svg>

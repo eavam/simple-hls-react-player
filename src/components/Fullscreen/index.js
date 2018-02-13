@@ -4,6 +4,11 @@ import styled from 'react-emotion';
 import { baseIcon } from '../styledComponens';
 import { FullIcon, WindowIcon } from '../svg-icons';
 
+const Root = styled('div')`
+  ${baseIcon};
+  margin-left: 20px;
+`;
+
 const Fullsreen = ({ isFullscreen, onClick }) => (
   <Root onClick={onClick}>{isFullscreen ? <WindowIcon /> : <FullIcon />}</Root>
 );
@@ -17,10 +22,5 @@ Fullsreen.defaultProps = {
   isFullscreen: false,
   onClick: () => {}
 };
-
-const Root = styled('div')`
-  ${baseIcon};
-  margin-left: 20px;
-`;
 
 export default Fullsreen;

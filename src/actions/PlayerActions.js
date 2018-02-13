@@ -1,5 +1,4 @@
-import Hls from 'hls.js';
-import * as actionTypes from '../actionTypes';
+import { changeVolume, toggleShowControls, timeUpdate } from '../actionTypes';
 
 /**
  * Calculates the value to change the volume
@@ -22,10 +21,10 @@ export const volumeMouseMove = (event, dispatch) => {
     const volumeNumber = volumeProcent / 100;
 
     dispatch(
-      actionTypes.changeVolume({
+      changeVolume({
         volumeNumber,
-        volumeNew
-      })
+        volumeNew,
+      }),
     );
   };
 };
@@ -56,16 +55,14 @@ let timer = null;
  */
 export const showHideControls = () => (dispatch, getState) => {
   const { showControls } = getState();
-  const action = () => dispatch(actionTypes.toggleShowControls());
+  const action = () => dispatch(toggleShowControls());
 
   clearTimeout(timer);
   if (!showControls) action();
   timer = setTimeout(action, 5000);
 };
 
-let hls = null;
-
-const actionTimeUpdate = event => dispatch => {
+export const actionTimeUpdate = event => dispatch => {
   const { currentTime } = event.target;
 
   let minute = Math.floor(currentTime / 60);
@@ -74,22 +71,5 @@ const actionTimeUpdate = event => dispatch => {
   minute = minute < 10 ? `0${minute}` : minute;
   seconds = seconds < 10 ? `0${seconds}` : seconds;
 
-  dispatch(actionTypes.timeUpdate(`${minute}:${seconds}`));
-};
-
-const videoInitialState = videoElement => dispatch => {
-  const videoEl = videoElement;
-  videoEl.play();
-  videoEl.volume = 0;
-  videoEl.addEventListener('timeupdate', event => dispatch(actionTimeUpdate(event)));
-  dispatch(actionTypes.toggleShowControls());
-};
-
-export const videoInit = (url, videoElement) => dispatch => {
-  if (videoElement && !hls) {
-    hls = new Hls();
-    hls.loadSource(url);
-    hls.attachMedia(videoElement);
-    hls.on(Hls.Events.MANIFEST_PARSED, () => dispatch(videoInitialState(videoElement)));
-  }
+  dispatch(timeUpdate(`${minute}:${seconds}`));
 };

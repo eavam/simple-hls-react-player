@@ -16,11 +16,11 @@ const PlayPauseControl = ({ typeActionPlayer, onClick }) => (
 
 PlayPauseControl.propTypes = {
   typeActionPlayer: PropTypes.oneOf(['play', 'pause']).isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 PlayPauseControl.defaultProps = {
-  onClick: () => {}
+  onClick: () => {},
 };
 
 export default PlayPauseControl;

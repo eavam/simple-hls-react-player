@@ -11,7 +11,7 @@ import {
   getVolume,
   getMuted,
   getTime,
-  getFullscreen
+  getFullscreen,
 } from '../../selectors';
 import { handleChangeVolume } from '../../actions/PlayerActions';
 import { togglePause, toggleMute, toggleFullscreen } from '../../actionTypes';
@@ -22,7 +22,7 @@ const mapStateToProps = createStructuredSelector({
   typeActionPlayer: getTypeActionPlayer,
   volume: getVolume,
   muted: getMuted,
-  time: getTime
+  time: getTime,
 });
 
 const mapDispatchToProps = dispatch =>

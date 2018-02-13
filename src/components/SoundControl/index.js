@@ -17,14 +17,14 @@ SoundControl.propTypes = {
   volume: PropTypes.number,
   muted: PropTypes.bool,
   onClick: PropTypes.func,
-  onMouseDown: PropTypes.func
+  onMouseDown: PropTypes.func,
 };
 
 SoundControl.defaultProps = {
   volume: 0,
   muted: false,
   onClick: () => {},
-  onMouseDown: () => {}
+  onMouseDown: () => {},
 };
 
 const Root = styled('div')`

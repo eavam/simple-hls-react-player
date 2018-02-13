@@ -10,11 +10,11 @@ const Root = styled('div')`
 const CurrentTime = ({ time }) => <Root>{time}</Root>;
 
 CurrentTime.propTypes = {
-  time: PropTypes.string
+  time: PropTypes.string,
 };
 
 CurrentTime.defaultProps = {
-  time: '00:00'
+  time: '00:00',
 };
 
 export default CurrentTime;

@@ -1,5 +1,6 @@
 module.exports = {
   printWidth: 100,
   parser: 'flow',
-  singleQuote: true
+  singleQuote: true,
+  trailingComma: 'all',
 };

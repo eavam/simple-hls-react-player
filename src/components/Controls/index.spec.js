@@ -10,7 +10,7 @@ test('Controls is required props', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -25,7 +25,7 @@ test('Controls title', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -40,7 +40,7 @@ test('Controls fullScreen true', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -55,7 +55,7 @@ test('Controls fullScreen false', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -69,7 +69,7 @@ test('Controls typeActionPlayer pause', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -84,7 +84,7 @@ test('Controls volume', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -99,7 +99,7 @@ test('Controls muted true', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -114,7 +114,7 @@ test('Controls muted false', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -129,7 +129,7 @@ test('Controls time', () => {
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />
+    />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -9,7 +9,7 @@ const initState = {
   muted: false,
   currentTime: '00:00',
   isFullscreen: false,
-  showControls: false
+  showControls: true,
 };
 
 const playerReducer = createReducer(
@@ -18,35 +18,35 @@ const playerReducer = createReducer(
       ...state,
       volume: action.volume.volumeNew,
       volumeNumber: action.volume.volumeNumber,
-      muted: false
+      muted: false,
     }),
 
     [actionTypes.togglePause]: state => ({
       ...state,
-      typeActionPlayer: state.typeActionPlayer === 'play' ? 'pause' : 'play'
+      typeActionPlayer: state.typeActionPlayer === 'play' ? 'pause' : 'play',
     }),
 
     [actionTypes.toggleMute]: state => ({
       ...state,
-      muted: !state.muted
+      muted: !state.muted,
     }),
 
     [actionTypes.timeUpdate]: (state, action) => ({
       ...state,
-      currentTime: action.time
+      currentTime: action.time,
     }),
 
     [actionTypes.toggleFullscreen]: state => ({
       ...state,
-      isFullscreen: !state.isFullscreen
+      isFullscreen: !state.isFullscreen,
     }),
 
     [actionTypes.toggleShowControls]: state => ({
       ...state,
-      showControls: !state.showControls
-    })
+      showControls: !state.showControls,
+    }),
   },
-  initState
+  initState,
 );
 
 export default playerReducer;

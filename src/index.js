@@ -12,7 +12,7 @@ ReactDOM.render(
   <Provider store={store}>
     <PlayerContainer url={url} />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 registerServiceWorker();

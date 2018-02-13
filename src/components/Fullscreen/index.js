@@ -15,12 +15,12 @@ const Fullsreen = ({ isFullscreen, onClick }) => (
 
 Fullsreen.propTypes = {
   isFullscreen: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 Fullsreen.defaultProps = {
   isFullscreen: false,
-  onClick: () => {}
+  onClick: () => {},
 };
 
 export default Fullsreen;

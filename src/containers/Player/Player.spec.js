@@ -7,13 +7,13 @@ import { Player } from './Player';
 test('PlayerContainer', () => {
   const mockStore = configureStore();
   const store = mockStore({
-    typeActionPlayer: 'play'
+    typeActionPlayer: 'play',
   });
 
   const component = renderer.create(
     <Provider store={store}>
       <Player />
-    </Provider>
+    </Provider>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

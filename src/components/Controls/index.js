@@ -52,7 +52,7 @@ const Controls = ({
   togglePause,
   toggleMute,
   handleChangeVolume,
-  toggleFullscreen
+  toggleFullscreen,
 }) => (
   <Root>
     <Title>{title}</Title>
@@ -85,7 +85,7 @@ Controls.propTypes = {
   togglePause: PropTypes.func.isRequired,
   toggleMute: PropTypes.func.isRequired,
   handleChangeVolume: PropTypes.func.isRequired,
-  toggleFullscreen: PropTypes.func.isRequired
+  toggleFullscreen: PropTypes.func.isRequired,
 };
 
 Controls.defaultProps = {
@@ -93,7 +93,7 @@ Controls.defaultProps = {
   isFullscreen: false,
   volume: 0,
   muted: false,
-  time: '00:00'
+  time: '00:00',
 };
 
 export default Controls;

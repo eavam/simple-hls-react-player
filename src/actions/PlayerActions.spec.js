@@ -6,23 +6,23 @@ test('PlayerAction => volumeMouseMove default', () => {
     payload: {
       volume: {
         volumeNew: 184,
-        volumeNumber: 0.575
-      }
+        volumeNumber: 0.575,
+      },
     },
-    type: '[7] changeVolume'
+    type: '[7] changeVolume',
   };
 
   const event = {
     target: {
       getBoundingClientRect: () => ({
         left: 150,
-        width: 320
-      })
-    }
+        width: 320,
+      }),
+    },
   };
 
   const windowEvent = {
-    clientX: 334
+    clientX: 334,
   };
 
   const dispatсh = o => expect(o).toEqual(init);
@@ -36,23 +36,23 @@ test('PlayerAction => volumeMouseMove new volume > maxPoint', () => {
     payload: {
       volume: {
         volumeNew: 320,
-        volumeNumber: 1
-      }
+        volumeNumber: 1,
+      },
     },
-    type: '[7] changeVolume'
+    type: '[7] changeVolume',
   };
 
   const event = {
     target: {
       getBoundingClientRect: () => ({
         left: 150,
-        width: 320
-      })
-    }
+        width: 320,
+      }),
+    },
   };
 
   const windowEvent = {
-    clientX: 834
+    clientX: 834,
   };
 
   const dispatсh = o => expect(o).toEqual(init);
@@ -66,23 +66,23 @@ test('PlayerAction => volumeMouseMove new volume < 0', () => {
     payload: {
       volume: {
         volumeNew: 0,
-        volumeNumber: 0
-      }
+        volumeNumber: 0,
+      },
     },
-    type: '[7] changeVolume'
+    type: '[7] changeVolume',
   };
 
   const event = {
     target: {
       getBoundingClientRect: () => ({
         left: 150,
-        width: 320
-      })
-    }
+        width: 320,
+      }),
+    },
   };
 
   const windowEvent = {
-    clientX: 140
+    clientX: 140,
   };
 
   const dispatсh = o => expect(o).toEqual(init);

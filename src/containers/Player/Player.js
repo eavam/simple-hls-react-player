@@ -1,3 +1,4 @@
+import Hls from 'hls.js';
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
@@ -12,16 +13,10 @@ import {
   getShowControls,
   getMuted,
   getVolumeNumber,
-  getTypeActionPlayer
+  getTypeActionPlayer,
 } from '../../selectors';
-import { showHideControls, videoInit } from '../../actions/PlayerActions';
+import { showHideControls, actionTimeUpdate } from '../../actions/PlayerActions';
 import Controls from '../Controls';
-
-let videoElement = null;
-
-const setVideoElement = element => {
-  videoElement = element;
-};
 
 const Root = styled('div')`
   width: ${props => (props.isFullscreen ? '100%' : '1280px')};
@@ -39,9 +34,28 @@ const Video = styled('video')`
   background-color: black;
 `;
 
+let videoElement = null;
+
+const setVideoElement = element => {
+  videoElement = element;
+};
+
 const InitVideoElement = lifecycle({
   componentDidMount() {
-    this.props.videoInit(this.props.url, videoElement);
+    if (videoElement) {
+      const hls = new Hls();
+      hls.loadSource(this.props.url);
+      hls.attachMedia(videoElement);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        videoElement[this.props.typeActionPlayer]();
+        videoElement.volume = this.props.volumeNumber;
+        videoElement.addEventListener('timeupdate', this.props.actionTimeUpdate);
+      });
+    }
+  },
+
+  componentWillUnmount() {
+    videoElement.removeEventListener('timeupdate', this.props.actionTimeUpdate);
   },
 
   componentWillReceiveProps(nextProps) {
@@ -57,13 +71,15 @@ const InitVideoElement = lifecycle({
       videoElement[nextProps.typeActionPlayer]();
     }
 
-    if (this.props.isFullscreen !== nextProps.isFullscreen && !nextProps.isFullscreen) {
+    const changeIsFullscreen = this.props.isFullscreen !== nextProps.isFullscreen;
+
+    if (changeIsFullscreen && !nextProps.isFullscreen) {
       fullscreen(videoElement.parentNode).release();
     }
-    if (this.props.isFullscreen !== nextProps.isFullscreen && nextProps.isFullscreen) {
+    if (changeIsFullscreen && nextProps.isFullscreen) {
       fullscreen(videoElement.parentNode).request();
     }
-  }
+  },
 });
 
 const Player = ({ showControls, onMouseMove, isFullscreen }) => (
@@ -76,13 +92,13 @@ const Player = ({ showControls, onMouseMove, isFullscreen }) => (
 Player.propTypes = {
   showControls: PropTypes.bool,
   onMouseMove: PropTypes.func,
-  isFullscreen: PropTypes.bool
+  isFullscreen: PropTypes.bool,
 };
 
 Player.defaultProps = {
   showControls: true,
   onMouseMove: () => {},
-  isFullscreen: false
+  isFullscreen: false,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -90,22 +106,22 @@ const mapStateToProps = createStructuredSelector({
   isFullscreen: getFullscreen,
   showControls: getShowControls,
   volumeNumber: getVolumeNumber,
-  muted: getMuted
+  muted: getMuted,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       onMouseMove: showHideControls,
-      videoInit
+      actionTimeUpdate,
     },
-    dispatch
+    dispatch,
   );
 
 const enhance = compose(
   connect(mapStateToProps, mapDispatchToProps),
   InitVideoElement,
-  onlyUpdateForKeys(['showControls', 'isFullscreen', 'muted', 'volumeNumber', 'typeActionPlayer'])
+  onlyUpdateForKeys(['showControls', 'isFullscreen', 'muted', 'volumeNumber', 'typeActionPlayer']),
 );
 
 export { Player }; // for Tests

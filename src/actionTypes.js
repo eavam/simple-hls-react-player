@@ -7,5 +7,5 @@ export const toggleShowControls = createAction('toggleShowControls');
 
 export const timeUpdate = createAction('timeUpdate', time => ({ time }));
 export const changeVolume = createAction('changeVolume', volume => ({
-  volume
+  volume,
 }));

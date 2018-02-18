@@ -12,7 +12,7 @@ test('PlayerContainer', () => {
 
   const component = renderer.create(
     <Provider store={store}>
-      <Player />
+      <Player title="Test title" />
     </Provider>,
   );
   const tree = component.toJSON();

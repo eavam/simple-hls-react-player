@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return the initial state 1`] = `
+Object {
+  "currentTime": "00:00",
+  "isFullscreen": false,
+  "muted": false,
+  "showControls": true,
+  "typeActionPlayer": "play",
+  "volume": 0,
+  "volumeNumber": 0,
+}
+`;

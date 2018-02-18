@@ -27,7 +27,11 @@ const PlayerHLS = ({ url, title }) => (
 
 PlayerHLS.propTypes = {
   url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+
+PlayerHLS.defaultProps = {
+  title: '',
 };
 
 export default PlayerHLS;

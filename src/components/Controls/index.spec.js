@@ -1,8 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { render } from 'enzyme';
 import Controls from './index';
 
-test('Controls is required props', () => {
+test('Controls default', () => {
   const component = renderer.create(
     <Controls
       typeActionPlayer="play"
@@ -16,19 +17,19 @@ test('Controls is required props', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Controls title', () => {
-  const component = renderer.create(
+test('Contorls has title', () => {
+  const component = (
     <Controls
-      title="Test title"
+      title="Test title controls"
       typeActionPlayer="play"
       togglePause={() => {}}
       toggleMute={() => {}}
       handleChangeVolume={() => {}}
       toggleFullscreen={() => {}}
-    />,
+    />
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(render(component).text()).toMatch('Test title controls');
 });
 
 test('Controls fullScreen true', () => {
@@ -133,4 +134,19 @@ test('Controls time', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Controls has time', () => {
+  const component = (
+    <Controls
+      time="15:15"
+      typeActionPlayer="play"
+      togglePause={() => {}}
+      toggleMute={() => {}}
+      handleChangeVolume={() => {}}
+      toggleFullscreen={() => {}}
+    />
+  );
+
+  expect(render(component).text()).toMatch('15:15');
 });

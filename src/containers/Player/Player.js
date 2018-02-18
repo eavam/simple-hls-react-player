@@ -58,25 +58,26 @@ const InitVideoElement = lifecycle({
     videoElement.removeEventListener('timeupdate', this.props.actionTimeUpdate);
   },
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     if (!videoElement) return;
+    const { props } = this;
 
-    if (this.props.muted !== nextProps.muted) {
-      videoElement.muted = nextProps.muted;
+    if (props.muted !== prevProps.muted) {
+      videoElement.muted = props.muted;
     }
-    if (this.props.volumeNumber !== nextProps.volumeNumber) {
-      videoElement.volume = nextProps.volumeNumber;
+    if (props.volumeNumber !== prevProps.volumeNumber) {
+      videoElement.volume = props.volumeNumber;
     }
-    if (this.props.typeActionPlayer !== nextProps.typeActionPlayer) {
-      videoElement[nextProps.typeActionPlayer]();
+    if (props.typeActionPlayer !== prevProps.typeActionPlayer) {
+      videoElement[props.typeActionPlayer]();
     }
 
-    const changeIsFullscreen = this.props.isFullscreen !== nextProps.isFullscreen;
+    const changeIsFullscreen = props.isFullscreen !== prevProps.isFullscreen;
 
-    if (changeIsFullscreen && !nextProps.isFullscreen) {
+    if (changeIsFullscreen && !props.isFullscreen) {
       fullscreen(videoElement.parentNode).release();
     }
-    if (changeIsFullscreen && nextProps.isFullscreen) {
+    if (changeIsFullscreen && props.isFullscreen) {
       fullscreen(videoElement.parentNode).request();
     }
   },

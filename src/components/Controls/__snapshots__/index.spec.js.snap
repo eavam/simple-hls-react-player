@@ -1,5 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Controls default 1`] = `
+<div
+  className="css-jy6mft"
+>
+  <div
+    className="css-c6kjrz"
+  >
+    
+  </div>
+  <div
+    className="css-w74n7p"
+  >
+    <div
+      className="css-jhr5er"
+    >
+      <div
+        className="css-12grdtp"
+        onClick={[Function]}
+      >
+        <svg
+          viewBox="0 0 20.03 25"
+        >
+          <path
+            d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
+            fill="#fff"
+          />
+        </svg>
+      </div>
+      <div
+        className="css-1sg2lsz"
+      >
+        <div
+          className="css-1htvj9q"
+          onClick={[Function]}
+          role="presentation"
+        >
+          <svg
+            viewBox="0 0 17.45 24.61"
+          >
+            <path
+              d="M16.52.17a1.64 1.64 0 0 0-1.73.18L9.52 4.48a3.2 3.2 0 0 0-.9-.13H3.21A3.21 3.21 0 0 0 0 7.56v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23A1.64 1.64 0 0 0 17.45 23V1.64a1.64 1.64 0 0 0-.93-1.47zm0 0"
+              fill="#fff"
+            />
+          </svg>
+        </div>
+        <div
+          className="css-hvewp1"
+          muted={false}
+          onMouseDown={[Function]}
+        />
+      </div>
+    </div>
+    <div
+      className="css-1kjcql6"
+    >
+      <div
+        className="css-mzstqo"
+      >
+        00:00
+      </div>
+      <div
+        className="css-1yncnvt"
+        onClick={[Function]}
+      >
+        <svg
+          viewBox="0 0 25 25"
+        >
+          <path
+            d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
+            fill="#fff"
+          />
+          <path
+            d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
+            fill="#fff"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Controls fullScreen false 1`] = `
 <div
   className="css-jy6mft"
@@ -155,88 +237,6 @@ exports[`Controls fullScreen true 1`] = `
           />
           <path
             d="M5.91 16.14H4.46v4.36h4.36V19H5.91zm0 0M5.91 6h2.91V4.5H4.46v4.37h1.45zm0 0M19 19h-2.91v1.5h4.36v-4.36H19zm0 0M16.09 4.5V6H19v2.87h1.46V4.5zm0 0"
-            fill="#fff"
-          />
-        </svg>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Controls is required props 1`] = `
-<div
-  className="css-jy6mft"
->
-  <div
-    className="css-c6kjrz"
-  >
-    
-  </div>
-  <div
-    className="css-w74n7p"
-  >
-    <div
-      className="css-jhr5er"
-    >
-      <div
-        className="css-12grdtp"
-        onClick={[Function]}
-      >
-        <svg
-          viewBox="0 0 20.03 25"
-        >
-          <path
-            d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
-            fill="#fff"
-          />
-        </svg>
-      </div>
-      <div
-        className="css-1sg2lsz"
-      >
-        <div
-          className="css-1htvj9q"
-          onClick={[Function]}
-          role="presentation"
-        >
-          <svg
-            viewBox="0 0 17.45 24.61"
-          >
-            <path
-              d="M16.52.17a1.64 1.64 0 0 0-1.73.18L9.52 4.48a3.2 3.2 0 0 0-.9-.13H3.21A3.21 3.21 0 0 0 0 7.56v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23A1.64 1.64 0 0 0 17.45 23V1.64a1.64 1.64 0 0 0-.93-1.47zm0 0"
-              fill="#fff"
-            />
-          </svg>
-        </div>
-        <div
-          className="css-hvewp1"
-          muted={false}
-          onMouseDown={[Function]}
-        />
-      </div>
-    </div>
-    <div
-      className="css-1kjcql6"
-    >
-      <div
-        className="css-mzstqo"
-      >
-        00:00
-      </div>
-      <div
-        className="css-1yncnvt"
-        onClick={[Function]}
-      >
-        <svg
-          viewBox="0 0 25 25"
-        >
-          <path
-            d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
-            fill="#fff"
-          />
-          <path
-            d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
             fill="#fff"
           />
         </svg>
@@ -469,88 +469,6 @@ exports[`Controls time 1`] = `
         className="css-mzstqo"
       >
         15:05
-      </div>
-      <div
-        className="css-1yncnvt"
-        onClick={[Function]}
-      >
-        <svg
-          viewBox="0 0 25 25"
-        >
-          <path
-            d="M4.54 20.5h16v-16h-16zM6.83 6.79h11.43v11.42H6.83zm0 0"
-            fill="#fff"
-          />
-          <path
-            d="M2.28 18.18H0V25h6.82v-2.28H2.28zm0 0M2.28 2.28h4.54V0H0v6.82h2.28zm0 0M22.72 22.72h-4.54V25H25v-6.82h-2.28zm0 0M18.18 0v2.28h4.54v4.54H25V0zm0 0"
-            fill="#fff"
-          />
-        </svg>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Controls title 1`] = `
-<div
-  className="css-jy6mft"
->
-  <div
-    className="css-c6kjrz"
-  >
-    Test title
-  </div>
-  <div
-    className="css-w74n7p"
-  >
-    <div
-      className="css-jhr5er"
-    >
-      <div
-        className="css-12grdtp"
-        onClick={[Function]}
-      >
-        <svg
-          viewBox="0 0 20.03 25"
-        >
-          <path
-            d="M7 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 1 1 7 0zm0 0M20 21.52a3.48 3.48 0 0 1-7 0v-18a3.48 3.48 0 0 1 7 0zm0 0"
-            fill="#fff"
-          />
-        </svg>
-      </div>
-      <div
-        className="css-1sg2lsz"
-      >
-        <div
-          className="css-1htvj9q"
-          onClick={[Function]}
-          role="presentation"
-        >
-          <svg
-            viewBox="0 0 17.45 24.61"
-          >
-            <path
-              d="M16.52.17a1.64 1.64 0 0 0-1.73.18L9.52 4.48a3.2 3.2 0 0 0-.9-.13H3.21A3.21 3.21 0 0 0 0 7.56v9.36a3.21 3.21 0 0 0 3.21 3.21h5.41a3.22 3.22 0 0 0 .78-.1l5.39 4.23A1.64 1.64 0 0 0 17.45 23V1.64a1.64 1.64 0 0 0-.93-1.47zm0 0"
-              fill="#fff"
-            />
-          </svg>
-        </div>
-        <div
-          className="css-hvewp1"
-          muted={false}
-          onMouseDown={[Function]}
-        />
-      </div>
-    </div>
-    <div
-      className="css-1kjcql6"
-    >
-      <div
-        className="css-mzstqo"
-      >
-        00:00
       </div>
       <div
         className="css-1yncnvt"

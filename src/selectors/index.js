@@ -1,4 +1,3 @@
-export const getTitle = state => state.title;
 export const getTypeActionPlayer = state => state.typeActionPlayer;
 export const getVolume = state => state.volume;
 export const getVolumeNumber = state => state.volumeNumber;

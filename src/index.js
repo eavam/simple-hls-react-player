@@ -1,18 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { injectGlobal } from 'emotion';
 import PlayerContainer from './containers/Player';
 import store from './store';
-import registerServiceWorker from './registerServiceWorker';
 
-const url =
-  'https://cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8';
+/* eslint-disable */
+injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
 
-ReactDOM.render(
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+`;
+/* eslint-enable */
+
+const PlayerHLS = ({ url, title }) => (
   <Provider store={store}>
-    <PlayerContainer url={url} />
-  </Provider>,
-  document.getElementById('root'),
+    <PlayerContainer url={url} title={title} />
+  </Provider>
 );
 
-registerServiceWorker();
+PlayerHLS.propTypes = {
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default PlayerHLS;

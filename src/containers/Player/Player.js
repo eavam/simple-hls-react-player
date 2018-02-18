@@ -82,14 +82,15 @@ const InitVideoElement = lifecycle({
   },
 });
 
-const Player = ({ showControls, onMouseMove, isFullscreen }) => (
+export const Player = ({ showControls, onMouseMove, isFullscreen, title }) => (
   <Root onMouseMove={onMouseMove} isFullscreen={isFullscreen} showControls={showControls}>
     <Video controls={false} innerRef={setVideoElement} />
-    {showControls && <Controls />}
+    {showControls && <Controls title={title} />}
   </Root>
 );
 
 Player.propTypes = {
+  title: PropTypes.string.isRequired,
   showControls: PropTypes.bool,
   onMouseMove: PropTypes.func,
   isFullscreen: PropTypes.bool,
@@ -123,7 +124,5 @@ const enhance = compose(
   InitVideoElement,
   onlyUpdateForKeys(['showControls', 'isFullscreen', 'muted', 'volumeNumber', 'typeActionPlayer']),
 );
-
-export { Player }; // for Tests
 
 export default enhance(Player);

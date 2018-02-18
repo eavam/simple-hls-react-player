@@ -2,7 +2,6 @@ import { createReducer } from 'redux-act';
 import * as actionTypes from '../actionTypes';
 
 const initState = {
-  title: 'Star Wars',
   volume: 0,
   volumeNumber: 0,
   typeActionPlayer: 'play',

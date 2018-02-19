@@ -2,10 +2,10 @@
 
 exports[`should return the initial state 1`] = `
 Object {
-  "currentTime": "00:00",
   "isFullscreen": false,
   "muted": false,
   "showControls": true,
+  "time": "00:00",
   "typeActionPlayer": "play",
   "volume": 0,
   "volumeNumber": 0,

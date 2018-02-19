@@ -6,7 +6,7 @@ const initState = {
   volumeNumber: 0,
   typeActionPlayer: 'play',
   muted: false,
-  currentTime: '00:00',
+  time: '00:00',
   isFullscreen: false,
   showControls: true,
 };
@@ -32,7 +32,7 @@ const playerReducer = createReducer(
 
     [actionTypes.timeUpdate]: (state, action) => ({
       ...state,
-      currentTime: action.time,
+      time: action.time,
     }),
 
     [actionTypes.toggleFullscreen]: state => ({

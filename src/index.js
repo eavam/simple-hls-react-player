@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { injectGlobal } from 'emotion';
-import PlayerContainer from './containers/Player';
+import Player from './components/Player';
 import store from './store';
 
 /* eslint-disable */
@@ -21,7 +21,7 @@ injectGlobal`
 
 const PlayerHLS = ({ url, title }) => (
   <Provider store={store}>
-    <PlayerContainer url={url} title={title} />
+    <Player url={url} title={title} />
   </Provider>
 );
 

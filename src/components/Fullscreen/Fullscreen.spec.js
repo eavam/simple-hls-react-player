@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Fullscreen from './index';
+import { Fullscreen } from './Fullscreen';
 import { FullIcon, WindowIcon } from '../svg-icons';
 
 test('Fullscreen default have FullIcon', () => {

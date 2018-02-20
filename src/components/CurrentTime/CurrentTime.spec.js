@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'enzyme';
-import CurrentTime from './index';
+import { CurrentTime } from './CurrentTime';
 
 test('Current time default', () => {
   const component = <CurrentTime />;

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import SoundControl from './index';
+import { SoundControl } from './SoundControl';
 
 test('SoundControl default', () => {
   const component = renderer.create(<SoundControl />);

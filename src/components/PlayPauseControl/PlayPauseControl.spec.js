@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PlayPauseControl from './index';
+import { PlayPauseControl } from './PlayPauseControl';
 
 test('PlayPauseControl play', () => {
   const component = renderer.create(<PlayPauseControl typeActionPlayer="play" />);

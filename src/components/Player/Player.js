@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { compose } from 'recompose';
 import withVideoElement from '../../hocs/withVideoElement';
-import withPlayerConnect from '../../hocs/withPlayerConnect';
+import withConnect from '../../hocs/withConnect';
+import { showHideControls } from '../../actions/PlayerActions';
 import Controls from '../Controls';
 
 const Root = styled('div')`
@@ -43,6 +44,11 @@ Player.defaultProps = {
   isFullscreen: false,
 };
 
-const enhance = compose(withPlayerConnect, withVideoElement);
+const enhance = compose(
+  withConnect(['isFullscreen', 'showControls'], {
+    onMouseMove: showHideControls,
+  }),
+  withVideoElement,
+);
 
 export default enhance(Player);

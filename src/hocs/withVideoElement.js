@@ -1,7 +1,9 @@
 import React from 'react';
 import Hls from 'hls.js';
 import fullscreen from 'fullscreen';
-import { lifecycle } from 'recompose';
+import { lifecycle, compose } from 'recompose';
+import withConnect from './withConnect';
+import { actionTimeUpdate } from '../actions/PlayerActions';
 
 let videoElement = null;
 
@@ -55,7 +57,12 @@ const LifecycleMethods = lifecycle({
 const withVideoElemnt = Component => {
   const WithComponent = props => <Component innerRef={setVideoElement} {...props} />;
 
-  return LifecycleMethods(WithComponent);
+  return compose(
+    withConnect(['muted', 'volumeNumber', 'typeActionPlayer', 'isFullscreen'], {
+      actionTimeUpdate,
+    }),
+    LifecycleMethods,
+  )(WithComponent);
 };
 
 export default withVideoElemnt;

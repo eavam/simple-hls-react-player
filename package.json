@@ -61,6 +61,7 @@
   },
   "lint-staged": {
     "src/*.{js,css}": [
+      "flow",
       "prettier --write",
       "eslint --fix",
       "git add"
